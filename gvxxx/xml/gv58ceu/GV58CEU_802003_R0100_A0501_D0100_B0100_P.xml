@@ -1,0 +1,4622 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project root="0100" protocol="0501" qldbg="0100" qble="0100" device_type="802003" name="GV58CEU" password="gv58ceu" sub_title="LTE Cat-1/LTE/GNSS Tracker">
+  <Support>
+    <S_LTE-Cat1 name="LTE-Cat1"> </S_LTE-Cat1>
+    <S_2G name="2G"> </S_2G>
+    <S_Format name="Format">3</S_Format>
+    <S_IBattery name="IBattery"> </S_IBattery>
+    <S_BLE name="BLE"> </S_BLE>
+    <S_1-Wire name="1-Wire"> </S_1-Wire>
+    <S_IO name="IO"> </S_IO>
+    <S_SMS name="SMS"> </S_SMS>
+    <S_Version name="Version">FF</S_Version>
+  </Support>
+  <AirProtocol ver="0501">
+    <Commands>
+      <BSI>
+        <P1 name="APN">
+          <Len>&lt;=64</Len>
+        </P1>
+        <P2 name="APN User Name">
+          <Len>&lt;=30</Len>
+        </P2>
+        <P3 name="APN Password">
+          <Len>&lt;=30</Len>
+        </P3>
+        <P4 name="Backup APN">
+          <Len>&lt;=64</Len>
+        </P4>
+        <P5 name="Backup APN User Name">
+          <Len>&lt;=30</Len>
+        </P5>
+        <P6 name="Backup APN Password">
+          <Len>&lt;=30</Len>
+        </P6>
+        <P7 name="Network Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Auto (LTE &amp; GSM)">0</Item>
+            <Item name="GSM Only">1</Item>
+            <Item name="Reserved">2</Item>
+            <Item name="LTE Only">3</Item>
+          </Range>
+        </P7>
+      </BSI>
+      <SRI>
+        <P1 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Stop mode">0</Item>
+            <Item name="TCP short-connection preferred mode">1</Item>
+            <Item name="TCP short-connection forced mode">2</Item>
+            <Item name="TCP long-connection mode">3</Item>
+            <Item name="UDP mode">4</Item>
+            <Item name="Forced SMS mode">5</Item>
+            <Item name="UDP with fixed local port mode">6</Item>
+            <Item name="Backup server supported TCP long-connection mode">7</Item>
+            <Item name="MQTT mode">9</Item>
+          </Range>
+        </P1>
+        <P3 name="Buffer Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Low priority">1</Item>
+            <Item name="High priority">2</Item>
+          </Range>
+        </P3>
+        <P4 name="Main Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P4>
+        <P5 name="Main Port">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P5>
+        <P6 name="Backup Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P6>
+        <P7 name="Backup Port">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P7>
+        <P8 name="SMS Gateway">
+          <Len>&lt;=20</Len>
+        </P8>
+        <P9 name="Heartbeat Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>360</Right>
+          </Range>
+        </P9>
+        <P10 name="SACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable SACK And Check">1</Item>
+            <Item name="Enable SACK But Not check">2</Item>
+          </Range>
+        </P10>
+        <P11 name="Protocol Format">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="ASCII">0</Item>
+            <Item name="HEX">1</Item>
+          </Range>
+        </P11>
+        <P12 name="SMS ACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P12>
+        <P14 name="Connection life">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>10</Left>
+            <Right>600</Right>
+          </Range>
+        </P14>
+        <P15 name="Primary DNS server">
+          <Default>0.0.0.0</Default>
+          <Len>&lt;=15</Len>
+        </P15>
+        <P16 name="Secondary DNS server">
+          <Default>0.0.0.0</Default>
+          <Len>&lt;=15</Len>
+        </P16>
+      </SRI>
+      <QSS>
+        <P1 name="APN">
+          <Len>&lt;=64</Len>
+        </P1>
+        <P2 name="APN User Name">
+          <Len>&lt;=30</Len>
+        </P2>
+        <P3 name="APN Password">
+          <Len>&lt;=30</Len>
+        </P3>
+        <P4 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Stop mode">0</Item>
+            <Item name="TCP short-connection preferred mode">1</Item>
+            <Item name="TCP short-connection forced mode">2</Item>
+            <Item name="TCP long-connection mode">3</Item>
+            <Item name="UDP mode">4</Item>
+            <Item name="Forced SMS mode">5</Item>
+            <Item name="UDP with fixed local port mode">6</Item>
+            <Item name="Backup server supported TCP long-connection mode">7</Item>
+            <Item name="MQTT mode">9</Item>
+          </Range>
+        </P4>
+        <P6 name="Buffer Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Low priority">1</Item>
+            <Item name="High priority">2</Item>
+          </Range>
+        </P6>
+        <P7 name="Main Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P7>
+        <P8 name="Main Port">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P8>
+        <P9 name="Backup Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P9>
+        <P10 name="Backup Port">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P10>
+        <P11 name="SMS Gateway">
+          <Len>&lt;=20</Len>
+        </P11>
+        <P12 name="Heartbeat Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>360</Right>
+          </Range>
+        </P12>
+        <P13 name="SACK  Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable SACK And Check">1</Item>
+            <Item name="Enable SACK But Not check">2</Item>
+          </Range>
+        </P13>
+        <P14 name="Protocol Format">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="ASCII">0</Item>
+            <Item name="HEX">1</Item>
+          </Range>
+        </P14>
+        <P15 name="SMS ACK Mode">
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P15>
+        <P16 name="Primary DNS Server">
+          <Default>0.0.0.0</Default>
+          <Len>&lt;=15</Len>
+        </P16>
+        <P17 name="Secondary DNS Server">
+          <Default>0.0.0.0</Default>
+          <Len>&lt;=15</Len>
+        </P17>
+      </QSS>
+      <MQT>
+        <P1 name="Server ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+        </P1>
+        <P2 name="Keep Alive">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>1080</Right>
+          </Range>
+        </P2>
+        <P3 name="UserName">
+          <Default>admin</Default>
+          <Len>&lt;=64</Len>
+          <Range type="ASCII0"> </Range>
+        </P3>
+        <P4 name="Password">
+          <Default>password</Default>
+          <Len>&lt;=64</Len>
+          <Range type="ASCII0"> </Range>
+        </P4>
+        <P6 name="Subscribe Topic">
+          <Default>quec_ctrl</Default>
+          <Len>&lt;=64</Len>
+          <Range type="ASCII0"> </Range>
+        </P6>
+        <P8 name="Publish Topic">
+          <Default>quec_msg</Default>
+          <Len>&lt;=64</Len>
+          <Range type="ASCII0"> </Range>
+        </P8>
+        <P10 name="Client ID">
+          <Default>#</Default>
+          <Len>&lt;=64</Len>
+          <Range type="AlphaNum2"> </Range>
+        </P10>
+      </MQT>
+      <MSI>
+        <P2 name="Server ID">
+          <Default>2</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="The Data Server of MSI">2</Item>
+          </Range>
+        </P2>
+        <P3 name="Report Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Stop mode.">0</Item>
+            <Item name="TCP short-connection forced mode.">2</Item>
+            <Item name="TCP long-connection mode.">3</Item>
+            <Item name="UDP mode.">4</Item>
+            <Item name="UDP with fixed local port.">6</Item>
+          </Range>
+        </P3>
+        <P4 name="Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P4>
+        <P5 name="Port">
+          <Len>&lt;=7</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P5>
+        <P6 name="Heartbeat Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>360</Right>
+          </Range>
+        </P6>
+        <P7 name="SACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable SACK And Check">1</Item>
+            <Item name="Enable SACK But Not check">2</Item>
+          </Range>
+        </P7>
+        <P8 name="Connection life">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>10</Left>
+            <Right>600</Right>
+          </Range>
+        </P8>
+      </MSI>
+      <TLS>
+        <P1 name="Server ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="The Data Server of SRI">0</Item>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P2>
+        <P3 name="Verification Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Do not verify the certificates">0</Item>
+            <Item name="Only server certification">1</Item>
+            <Item name="Two-way certification">2</Item>
+          </Range>
+        </P3>
+      </TLS>
+      <OWL>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="White list Mode">1</Item>
+            <Item name="Black List Mode">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Start Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>100</Right>
+          </Range>
+        </P2>
+        <P3 name="End Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>100</Right>
+          </Range>
+        </P3>
+        <P4 name="Operator List">
+          <Len>&lt;=6*100</Len>
+        </P4>
+        <P5 name="TCP Connection Timeout">
+          <Default>60</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>30</Left>
+            <Right>90</Right>
+          </Range>
+        </P5>
+      </OWL>
+      <CFG>
+        <P1 name="New Password">
+          <Len>4 - 20</Len>
+          <Range type="AlphaNum4"> </Range>
+        </P1>
+        <P2 name="Device Name">
+          <Default>Device Name</Default>
+          <Len>&lt;=20</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P2>
+        <P3 name="ODO Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable the odograph by GNSS">1</Item>
+          </Range>
+        </P3>
+        <P4 name="ODO Initial Mileage">
+          <Default>0.0</Default>
+          <Len>&lt;=9</Len>
+          <Range>
+            <Left>0.0</Left>
+            <Right>4294967.0</Right>
+          </Range>
+        </P4>
+        <P7 name="Report Item Mask">
+          <Default>003F</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="Power Saving Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="GNSS Deep Saving Mode">1</Item>
+            <Item name="GNSS Low Saving Mode">2</Item>
+          </Range>
+        </P8>
+        <P9 name="Position Append Mask">
+          <Default>00</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>00</Left>
+            <Right>FF</Right>
+          </Range>
+        </P9>
+        <P10 name="Event Mask">
+          <Default>7DEF</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P10>
+        <P11 name="Pin Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>F</Right>
+          </Range>
+        </P11>
+        <P12 name="LED Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Each time the device powers on, the three LEDs will work for 30 minutes and then turn off">0</Item>
+            <Item name="Cell LED, Power LED and GNSS LED turn on as configured">1</Item>
+            <Item name="Cell LED, Power LED and GNSS LED work 10 minutes after the device is powered">2</Item>
+          </Range>
+        </P12>
+        <P13 name="Device Information Report">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P13>
+        <P14 name="Device Information Interval">
+          <Default>300</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>30</Left>
+            <Right>86400</Right>
+          </Range>
+        </P14>
+        <P15 name="Location Request Mask">
+          <Default>00</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>00</Left>
+            <Right>23</Right>
+          </Range>
+        </P15>
+        <P16 name="Battery Working Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P16>
+        <P17 name="Battery Charge Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Charge On Need">0</Item>
+            <Item name="Charge After Ignition On">1</Item>
+          </Range>
+        </P17>
+        <P18 name="AGPS Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="AGPS Offline">1</Item>
+            <Item name="AGPS Online">2</Item>
+          </Range>
+        </P18>
+        <P19 name="Cell Report">
+          <Default>001F</Default>
+          <Len>4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P19>
+        <P20 name="GNSS Lost Time">
+          <Default>0</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>30</Right>
+          </Range>
+        </P20>
+        <P21 name="GNSS Working Mode">
+          <Default>4</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="GPS and GLONASS">0</Item>
+            <Item name="GPS">1</Item>
+            <Item name="GPS and BeiDou">4</Item>
+          </Range>
+        </P21>
+      </CFG>
+      <DOG>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Reboot Periodically">1</Item>
+            <Item name="Ignition Reboot">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Ignition Frequency">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>120</Right>
+          </Range>
+        </P2>
+        <P3 name="Interval">
+          <Default>30</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>30</Right>
+          </Range>
+        </P3>
+        <P4 name="Time">
+          <Default>0200</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P4>
+        <P6 name="Report Before Reboot">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P6>
+        <P7 name="Input ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P7>
+        <P9 name="No Network Interval">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>1440</Right>
+          </Range>
+        </P9>
+        <P10 name="No Activation Interval">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>1440</Right>
+          </Range>
+        </P10>
+        <P11 name="Send Failure Timeout">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>1440</Right>
+          </Range>
+        </P11>
+        <P14 name="Reboot Device Type">
+          <Default>0</Default>
+          <Range>
+            <Item name="Reboot device">0</Item>
+            <Item name="Reboot RF-Radio Frequency, only valid for &lt;No Network Interval&gt;, &lt;No Activation Interval&gt; and &lt;Send Failure Timeout&gt;">1</Item>
+          </Range>
+        </P14>
+      </DOG>
+      <GAM>
+        <P1 name="Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Speed Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P2>
+        <P3 name="Motion Speed Threshold">
+          <Default>25</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>50</Right>
+          </Range>
+        </P3>
+        <P4 name="Motion Cumulative Time">
+          <Default>10</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>100</Right>
+          </Range>
+        </P4>
+        <P5 name="Motionless Cumulative Time">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>250</Right>
+          </Range>
+        </P5>
+        <P6 name="GNSS Fix Failure Timeout">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>1800</Right>
+          </Range>
+        </P6>
+      </GAM>
+      <HMC>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Difference Calculation Mode">1</Item>
+            <Item name="Initial Value Mode">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Initial Hour Meter Count">
+          <Default>00000:00:00</Default>
+          <Len>13</Len>
+          <Range>
+            <Item>00000:00:00-1193000:00:00</Item>
+          </Range>
+        </P2>
+      </HMC>
+      <HRM>
+        <P3 name="+ACK Mask">
+          <Default>6F</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FF</Right>
+          </Range>
+        </P3>
+        <P4 name="+RSP Mask">
+          <Default>FE7FBF</Default>
+          <Len>&lt;=16</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFFFFFFFFFF</Right>
+          </Range>
+        </P4>
+        <P5 name="+EVT Mask">
+          <Default>FE7FBF</Default>
+          <Len>&lt;=16</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFFFFFFFFFF</Right>
+          </Range>
+        </P5>
+        <P6 name="+INF Mask">
+          <Default>FF7D</Default>
+          <Len>&lt;=60</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFFFFFFFFFF</Right>
+          </Range>
+        </P6>
+        <P7 name="+HBD Mask">
+          <Default>EF</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FF</Right>
+          </Range>
+        </P7>
+        <P9 name="+CRD Mask">
+          <Default>7D</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P9>
+        <P10 name="+CAN Mask">
+          <Default>7FF</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P10>
+      </HRM>
+      <OWH>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Manual Start Mode">1</Item>
+            <Item name="Full Manual Mode">2</Item>
+            <Item name="Automatic Mode">3</Item>
+          </Range>
+        </P1>
+        <P2 name="Day of Work">
+          <Default>1F</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>7F</Right>
+          </Range>
+        </P2>
+        <P3 name="Working Hours Start1">
+          <Default>0900</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P3>
+        <P4 name="Working Hours End1">
+          <Default>1200</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P4>
+        <P5 name="Working Hours Start2">
+          <Default>1300</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P5>
+        <P6 name="Working Hours End2">
+          <Default>1800</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P6>
+        <P9 name="Digital Input ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P10>
+        <P11 name="Output Status">
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P11>
+        <P12 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P12>
+        <P13 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P13>
+      </OWH>
+      <PDS>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Save Logical States">1</Item>
+            <Item name="Reset Logical States">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Mask">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P2>
+      </PDS>
+      <PIN>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P2 name="PIN">
+          <Len>4 - 8</Len>
+          <Range type="Number"> </Range>
+        </P2>
+      </PIN>
+      <RTP>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Download File">0</Item>
+          </Range>
+        </P1>
+        <P2 name="Protocol Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="HTTP">0</Item>
+          </Range>
+        </P2>
+        <P3 name="File Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="CA certificate.">0</Item>
+            <Item name="Client Certificate">1</Item>
+            <Item name="Client key">2</Item>
+          </Range>
+        </P3>
+        <P4 name="URL">
+          <Len>&lt;=100</Len>
+          <Range type="ASCII1"> </Range>
+        </P4>
+      </RTP>
+      <LTP>
+        <P2 name="Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Delete File">0</Item>
+            <Item name="Import File">1</Item>
+          </Range>
+        </P2>
+        <P3 name="File Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="CA certificate">0</Item>
+            <Item name="Client Certificate">1</Item>
+            <Item name="Client key">2</Item>
+          </Range>
+        </P3>
+        <P4 name="Current Number">
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P4>
+        <P5 name="Total Number">
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P5>
+        <P6 name="Data">
+          <Len>&lt;=512</Len>
+          <Range type="ASCII2"> </Range>
+        </P6>
+        <P7 name="CRC">
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P7>
+      </LTP>
+      <TMA>
+        <P1 name="Sign">
+          <Default>+</Default>
+          <Len>1</Len>
+          <Range type="PlusSub"> </Range>
+        </P1>
+        <P2 name="Hour Offset">
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>12</Right>
+          </Range>
+        </P2>
+        <P3 name="Minute Offset">
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>59</Right>
+          </Range>
+        </P3>
+        <P4 name="Daylight Saving Mode">
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P4>
+        <P5 name="UTC Time">
+          <Len>14</Len>
+          <Range type="FullDate"> </Range>
+        </P5>
+        <P6 name="Network Time Checking">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P6>
+      </TMA>
+      <WLT>
+        <P1 name="Call Filter">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>F</Right>
+          </Range>
+        </P1>
+        <P2 name="Start Index">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P2>
+        <P3 name="End Index">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P3>
+        <P4 name="Phone Number List">
+          <Len>&lt;=20*10</Len>
+        </P4>
+      </WLT>
+      <AVS>
+        <P1 name="Rest Validity">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>255</Right>
+          </Range>
+        </P1>
+        <P2 name="Movement Validity">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>255</Right>
+          </Range>
+        </P2>
+      </AVS>
+      <VVS>
+        <P1 name="Ignition On Voltage">
+          <Default>13500</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>250</Left>
+            <Right>28000</Right>
+          </Range>
+        </P1>
+        <P2 name="Voltage Offset">
+          <Default>600</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>200</Left>
+            <Right>2000</Right>
+          </Range>
+        </P2>
+        <P3 name="Ignition On Debounce">
+          <Default>10</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>255</Right>
+          </Range>
+        </P3>
+        <P4 name="Smart Voltage Adjustment">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P4>
+        <P5 name="Ignition Off Debounce">
+          <Default>10</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>255</Right>
+          </Range>
+        </P5>
+      </VVS>
+      <VMS>
+        <P1 name="Virtual Ignition Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Voltage virtual ignition detection mode.">2</Item>
+            <Item name="Accelerometer virtual ignition detection mode">4</Item>
+            <Item name="Combined detection mode.">7</Item>
+          </Range>
+        </P1>
+        <P2 name="Virtual Ignition On Mask">
+          <Default>3</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>00</Left>
+            <Right>03</Right>
+          </Range>
+        </P2>
+        <P3 name="Virtual Ignition Off Mask">
+          <Default>3</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>00</Left>
+            <Right>03</Right>
+          </Range>
+        </P3>
+        <P4 name="Virtual Ignition On Logic">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="AND logic.">0</Item>
+            <Item name="OR logic.">1</Item>
+          </Range>
+        </P4>
+      </VMS>
+      <CMD>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Delete command.">0</Item>
+            <Item name="Add command.">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Command ID">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>31</Right>
+          </Range>
+        </P2>
+        <P3 name="Command String">
+          <Len>&lt;=200</Len>
+          <Range type="ATCmd"> </Range>
+        </P3>
+      </CMD>
+      <UDF>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable The Event Group.">0</Item>
+            <Item name="Enable The Event Group">1</Item>
+            <Item name="Delete The Event Group">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Group ID">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>31</Right>
+          </Range>
+        </P2>
+        <P3 name="Input ID Mask">
+          <Default>0</Default>
+          <Len>&lt;=16</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFFFFFFFFFF</Right>
+          </Range>
+        </P3>
+        <P4 name="Debounce Time">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>86400</Right>
+          </Range>
+        </P4>
+        <P5 name="Inzizo Mask">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>00000</Left>
+            <Right>FFFFF</Right>
+          </Range>
+        </P5>
+        <P6 name="Outzizo Mask">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>00000</Left>
+            <Right>FFFFF</Right>
+          </Range>
+        </P6>
+        <P7 name="Command ID Mask">
+          <Default>0</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="Command Ack Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P8>
+        <P9 name="Inpeo Mask">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>00000</Left>
+            <Right>FFFFF</Right>
+          </Range>
+        </P9>
+        <P10 name="Outpeo Mask">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>00000</Left>
+            <Right>FFFFF</Right>
+          </Range>
+        </P10>
+        <P11 name="WMS301 Closed Mask">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>000</Left>
+            <Right>3FF</Right>
+          </Range>
+        </P11>
+        <P12 name="WMS301 Separation Mask">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>000</Left>
+            <Right>3FF</Right>
+          </Range>
+        </P12>
+      </UDF>
+      <BTS>
+        <P1 name="Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P3 name="Bluetooth Name">
+          <Default>GV58CEU%IMEI</Default>
+          <Len>&lt;=18</Len>
+          <Range type="AlphaNum3"> </Range>
+        </P3>
+        <P5 name="Discoverable Mode">
+          <Default>3</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Non-discoverable mode">0</Item>
+            <Item name="General Discoverable After Igintion On">1</Item>
+            <Item name="General Discoverable After Igintion Off">2</Item>
+            <Item name="General Discoverable After Power On">3</Item>
+          </Range>
+        </P5>
+        <P6 name="Discoverable Time">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>1440</Right>
+          </Range>
+        </P6>
+        <P7 name="Bluetooth Report Mask">
+          <Default>1D03</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="Bluetooth Event Mask">
+          <Default>3</Default>
+          <Len>&lt;=20</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P8>
+        <P9 name="PIN Code Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P9>
+        <P10 name="PIN Code">
+          <Default>123456</Default>
+          <Len>4|6</Len>
+          <Range type="Number"> </Range>
+        </P10>
+      </BTS>
+      <BAS>
+        <P1 name="Index">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>9</Right>
+          </Range>
+        </P1>
+        <P2 name="Accessory Type">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item name="No Bluetooth accessory">0</Item>
+            <Item name="Escort Bluetooth Accessory">1</Item>
+            <Item name="Beacon temperature sensor">2</Item>
+            <Item name="CAN accessory">4</Item>
+            <Item name="Beacon Multi-Functional Sensorr">6</Item>
+            <Item name="Technoton accessory">7</Item>
+            <Item name="External Input Output Bluetooth Accessory">8</Item>
+            <Item name="Mechatronics Bluetooth accessory">10</Item>
+            <Item name="Magnet Bluetooth accessory">11</Item>
+            <Item name="BLE TPMS sensor">12</Item>
+            <Item name="Relay Bluetooth accessory">13</Item>
+            <Item name="Smart Cap Bluetooth accessory">14</Item>
+          </Range>
+        </P2>
+        <P3 name="Accessory Model">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+            <Item>2</Item>
+            <Item>3</Item>
+            <Item>4</Item>
+            <Item>5</Item>
+          </Range>
+        </P3>
+        <P4 name="Accessory Name">
+          <Len>&lt;=20</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P4>
+        <P5 name="Accessory MAC">
+          <Default>FFFFFFFFFFFF</Default>
+          <Len>12</Len>
+          <Range>
+            <Left>000000000000</Left>
+            <Right>FFFFFFFFFFFF</Right>
+          </Range>
+        </P5>
+        <P6 name="Accessory Append Mask">
+          <Default>FFFF</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P6>
+        <P7 name="Read Interval">
+          <Default>30</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>86400</Right>
+          </Range>
+        </P7>
+        <P8 name="Low Voltage Threshold">
+          <Default>2400</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5000</Right>
+          </Range>
+        </P8>
+        <P10 name="Accessory Parameters (Optional)">
+          <Len>0</Len>
+        </P10>
+        <P12 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P12>
+        <P13 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P13>
+        <P14 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P14>
+        <P15 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P15>
+      </BAS>
+      <BID>
+        <P1 name="Index">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P2>
+        <P3 name="Beacon ID Model">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="WKF300">0</Item>
+            <Item name="iBeacon E6">1</Item>
+            <Item name="ID ELA">2</Item>
+            <Item name="WID310">4</Item>
+          </Range>
+        </P3>
+        <P4 name="Accessory Append Mask">
+          <Default>000A</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P4>
+        <P5 name="Low Voltage Threshold">
+          <Default>2400</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5000</Right>
+          </Range>
+        </P5>
+        <P7 name="Start Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>300</Right>
+          </Range>
+        </P7>
+        <P8 name="End Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>300</Right>
+          </Range>
+        </P8>
+        <P9 name="MAC List">
+          <Len>&lt;=12*75</Len>
+        </P9>
+        <P10 name="Reserved(Optional)">
+          <Len>0</Len>
+        </P10>
+        <P11 name="Reserved(Optional)">
+          <Len>0</Len>
+        </P11>
+        <P12 name="Reserved(Optional)">
+          <Len>0</Len>
+        </P12>
+        <P13 name="Reserved(Optional)">
+          <Len>0</Len>
+        </P13>
+        <P14 name="Reserved(Optional)">
+          <Len>0</Len>
+        </P14>
+        <P15 name="Organization Unique Identifier">
+          <Len>6</Len>
+          <Range>
+            <Left>000000</Left>
+            <Right>FFFFFF</Right>
+          </Range>
+        </P15>
+        <P20 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P20>
+        <P21 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P21>
+        <P22 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P22>
+        <P23 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P23>
+      </BID>
+      <AEX>
+        <P1 name="Analog Input Expansion Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Bluetooth Analog Input">0</Item>
+          </Range>
+        </P1>
+        <P2 name="Bind BAS Index">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>9</Right>
+          </Range>
+        </P2>
+        <P3 name="Analog Input Number">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>1</Item>
+          </Range>
+        </P3>
+        <P4 name="Analog Input ID">
+          <Default>5</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>5</Right>
+          </Range>
+        </P4>
+        <P5 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable Analog Input Alarm Within The Range">1</Item>
+            <Item name="Enable Analog Input Alarm Outside The Range">2</Item>
+          </Range>
+        </P5>
+        <P6 name="Min Threshold">
+          <Default>8000</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>8000</Left>
+            <Right>32000</Right>
+          </Range>
+        </P6>
+        <P7 name="Max Threshold">
+          <Default>32000</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>8000</Left>
+            <Right>32000</Right>
+          </Range>
+        </P7>
+      </AEX>
+      <SVR>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable.">0</Item>
+            <Item name="Enable.">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Ghost MAC Address">
+          <Len>12</Len>
+          <Range>
+            <Left>000000000000</Left>
+            <Right>FFFFFFFFFFFF</Right>
+          </Range>
+        </P2>
+        <P3 name="Connect Interval">
+          <Default>10</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>10</Item>
+            <Item>20</Item>
+            <Item>30</Item>
+            <Item>60</Item>
+            <Item>120</Item>
+            <Item>180</Item>
+            <Item>240</Item>
+            <Item>360</Item>
+            <Item>480</Item>
+            <Item>720</Item>
+            <Item>1440</Item>
+          </Range>
+        </P3>
+        <P4 name="Connect Fail Count">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P4>
+        <P5 name="Match Connected IMEI">
+          <Len>15</Len>
+          <Range type="Number"> </Range>
+        </P5>
+        <P6 name="BTI Report Interval">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>1440</Right>
+          </Range>
+        </P6>
+      </SVR>
+      <FRI>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable.">0</Item>
+            <Item name="Fixed Time Report.">1</Item>
+            <Item name="Fixed Distance Report.">2</Item>
+            <Item name="Fixed Mileage Report.">3</Item>
+            <Item name="Optimum Report.">4</Item>
+            <Item name="Fixed Time or Mileage Report.">5</Item>
+          </Range>
+        </P1>
+        <P2 name="Discard No Fix">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item name="Enable report.">0</Item>
+            <Item name="Disable report.">1</Item>
+          </Range>
+        </P2>
+        <P4 name="Period Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P4>
+        <P5 name="Start Time">
+          <Default>0000</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P5>
+        <P6 name="End Time">
+          <Default>0000</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P6>
+        <P7 name="Check Interval">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>86400</Right>
+          </Range>
+        </P7>
+        <P8 name="Send Interval">
+          <Default>30</Default>
+          <Len>&lt;=20</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>86400</Right>
+          </Range>
+        </P8>
+        <P9 name="Distance">
+          <Default>1000</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>50</Left>
+            <Right>65535</Right>
+          </Range>
+        </P9>
+        <P10 name="Mileage">
+          <Default>1000</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>50</Left>
+            <Right>65535</Right>
+          </Range>
+        </P10>
+        <P12 name="Corner Value">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>180</Right>
+          </Range>
+        </P12>
+        <P13 name="IGF Report Interval">
+          <Default>600</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P13>
+        <P14 name="ERI Mask">
+          <Default>0</Default>
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P14>
+        <P15 name="Continue Time">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>10</Right>
+          </Range>
+        </P15>
+        <P17 name="Wrap Corner Point">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Do not wrap corner point">0</Item>
+            <Item name="Wrap corner point and wait">1</Item>
+          </Range>
+        </P17>
+      </FRI>
+      <FFC>
+        <P1 name="Priority">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>4</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Change FRI parameters By Geo-Fence Alarm">1</Item>
+            <Item name="Change FRI parameters By Know Roaming Alarm">2</Item>
+            <Item name="Change FRI parameters By Unknow Roaming Alarm">3</Item>
+          </Range>
+        </P2>
+        <P3 name="FRI Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Fixed Time Report">1</Item>
+            <Item name="Fixed Distance Report">2</Item>
+            <Item name="Fixed Mileage Report">3</Item>
+            <Item name="Optimum Report">4</Item>
+            <Item name="Fixed Time or Mileage Report">5</Item>
+          </Range>
+        </P3>
+        <P4 name="FRI IGN Report Interval">
+          <Default>30</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P4>
+        <P5 name="FRI Report Distance">
+          <Default>500</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>50</Left>
+            <Right>65535</Right>
+          </Range>
+        </P5>
+        <P6 name="FRI Report Mileage">
+          <Default>500</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>50</Left>
+            <Right>65535</Right>
+          </Range>
+        </P6>
+        <P7 name="FRI IGF Report Interval">
+          <Default>300</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P7>
+        <P8 name="FRI IGN Check interval">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>86400</Right>
+          </Range>
+        </P8>
+        <P9 name="Corner Report">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>180</Right>
+          </Range>
+        </P9>
+      </FFC>
+      <ASC>
+        <P1 name="Brake Speed Threshold">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>30</Left>
+            <Right>400km/h</Right>
+          </Range>
+        </P1>
+        <P2 name="Delta Speed Threshold">
+          <Default>10</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>72km/h</Right>
+          </Range>
+        </P2>
+        <P3 name="Delta Heading Threshold">
+          <Default>2</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5</Right>
+          </Range>
+        </P3>
+        <P8 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+      </ASC>
+      <CRA>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable Detection Of Crash With Three-Axis">1</Item>
+            <Item name="Enable Detection Of Crash With Self-calibration Three-Axis">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Threshold_X">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>160</Right>
+          </Range>
+        </P2>
+        <P3 name="Threshold_Y">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>160</Right>
+          </Range>
+        </P3>
+        <P4 name="Threshold_Z">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>160</Right>
+          </Range>
+        </P4>
+        <P5 name="Sampling Start Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Start Sampling After power on">0</Item>
+            <Item name="Start Sampling After ignition on">1</Item>
+          </Range>
+        </P5>
+        <P6 name="Samples Before Crash">
+          <Default>500</Default>
+          <Len>4</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>1500</Right>
+          </Range>
+        </P6>
+        <P7 name="Samples After Crash">
+          <Default>500</Default>
+          <Len>4</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>1500</Right>
+          </Range>
+        </P7>
+        <P8 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+      </CRA>
+      <BZA>
+        <P1 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>2</Right>
+          </Range>
+        </P1>
+        <P5 name="Output Status1">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+            <Item>2</Item>
+          </Range>
+        </P5>
+        <P6 name="Duration1">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P6>
+        <P7 name="Toggle Times1">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P7>
+        <P10 name="Output Status2">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+            <Item>2</Item>
+          </Range>
+        </P10>
+        <P11 name="Duration2">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+        <P12 name="Toggle Times2">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P12>
+        <P15 name="Output Status3">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+            <Item>2</Item>
+          </Range>
+        </P15>
+        <P16 name="Duration3">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P16>
+        <P17 name="Toggle Times3">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P17>
+        <P20 name="Output Status4">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+            <Item>2</Item>
+          </Range>
+        </P20>
+        <P21 name="Duration4">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P21>
+        <P22 name="Toggle Times4">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P22>
+      </BZA>
+      <GEO>
+        <P1 name="ID">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>19</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Entering the zone">1</Item>
+            <Item name="Exiting the zone">2</Item>
+            <Item name="Both entering and exiting">3</Item>
+          </Range>
+        </P2>
+        <P3 name="Longitude">
+          <Default>0</Default>
+          <Len>&lt;=11</Len>
+          <Range type="Lng"> </Range>
+        </P3>
+        <P4 name="Latitude">
+          <Default>0</Default>
+          <Len>&lt;=10</Len>
+          <Range type="Lat"> </Range>
+        </P4>
+        <P5 name="Radius">
+          <Default>50</Default>
+          <Len>&lt;=7</Len>
+          <Range>
+            <Left>50</Left>
+            <Right>6000000</Right>
+          </Range>
+        </P5>
+        <P6 name="Check Interval">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P6>
+        <P7 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P7>
+        <P8 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P9>
+        <P10 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Trigger Mode">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Auto Mode">21</Item>
+            <Item name="Manual Mode">22</Item>
+          </Range>
+        </P11>
+        <P12 name="Trigger Report">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P12>
+        <P13 name="Start Time">
+          <Default>0000</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P13>
+        <P14 name="End Time">
+          <Default>0000</Default>
+          <Len>4</Len>
+          <Range type="Time1"> </Range>
+        </P14>
+        <P15 name="State Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Ignore State Change">0</Item>
+            <Item name="Need State Change">1</Item>
+          </Range>
+        </P15>
+      </GEO>
+      <PEO>
+        <P1 name="ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>19</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Entering the zone">1</Item>
+            <Item name="Exiting the zone">2</Item>
+            <Item name="Both entering and exiting">3</Item>
+          </Range>
+        </P2>
+        <P3 name="Start Point">
+          <Default>1</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P3>
+        <P4 name="End Point">
+          <Default>3</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>3</Left>
+            <Right>10</Right>
+          </Range>
+        </P4>
+        <P5 name="Longitude">
+          <Default>0</Default>
+          <Len>&lt;=11</Len>
+          <Range type="Lng"> </Range>
+        </P5>
+        <P6 name="Latitude">
+          <Default>0</Default>
+          <Len>&lt;=10</Len>
+          <Range type="Lat"> </Range>
+        </P6>
+        <P7 name="Check Interval">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P7>
+        <P8 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+        <P12 name="State Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Report when getting the PEO state for the first time.">0</Item>
+            <Item name="Do not report until the PEO state changes.">1</Item>
+          </Range>
+        </P12>
+      </PEO>
+      <HBM>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Detected by GNSS only">1</Item>
+            <Item name="Detected by motion sensor only">2</Item>
+            <Item name="Detected by motion sensor or GNSS">3</Item>
+            <Item name="Detected by motion sensor and GNSS">4</Item>
+            <Item name="Detected by XYZ-axis acceleration data only">5</Item>
+          </Range>
+        </P1>
+        <P2 name="Behavior Duration">
+          <Default>3</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>3</Left>
+            <Right>5</Right>
+          </Range>
+        </P2>
+        <P3 name="Discard Unknown Event">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Not Discard Unknow Alarm">0</Item>
+            <Item name="Discard Unknow Alarm">1</Item>
+          </Range>
+        </P3>
+        <P4 name="High Speed">
+          <Default>100</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>100</Left>
+            <Right>400</Right>
+          </Range>
+        </P4>
+        <P5 name="Delta High Speed Braking">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P5>
+        <P6 name="Delta High Speed Acceleration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P6>
+        <P8 name="Medium Speed">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>60</Left>
+            <Right>100</Right>
+          </Range>
+        </P8>
+        <P9 name="Delta Medium Speed Braking">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P9>
+        <P10 name="Delta Medium Speed Acceleration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P10>
+        <P13 name="Delta Low Speed Braking">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P13>
+        <P14 name="Delta Low Speed Acceleration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P14>
+        <P16 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P16>
+        <P17 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P17>
+        <P18 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P18>
+        <P19 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P19>
+        <P20 name="Cornering and Braking Threshold">
+          <Default>25</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>100</Right>
+          </Range>
+        </P20>
+        <P21 name="Cornering and Braking Duration">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>250</Right>
+          </Range>
+        </P21>
+        <P22 name="Acceleration Threshold">
+          <Default>20</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>100</Right>
+          </Range>
+        </P22>
+        <P23 name="Acceleration Duration">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>250</Right>
+          </Range>
+        </P23>
+        <P26 name="Brake Threshold">
+          <Default>25</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>100</Right>
+          </Range>
+        </P26>
+        <P27 name="Brake Duration">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>250</Right>
+          </Range>
+        </P27>
+        <P28 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Only Report HBM Alarm">0</Item>
+            <Item name="Report HBE and HBM Alarm">1</Item>
+            <Item name="Only Report HBM Alarm">2</Item>
+          </Range>
+        </P28>
+      </HBM>
+      <IDL>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Time to Stationary">
+          <Default>2</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>30</Right>
+          </Range>
+        </P2>
+        <P3 name="Time to Movement">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>5</Right>
+          </Range>
+        </P3>
+        <P4 name="Debounce Distance">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>25</Left>
+            <Right>9999</Right>
+          </Range>
+        </P4>
+        <P8 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+      </IDL>
+      <JDC>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable.">0</Item>
+            <Item name="Report the alarm message upon entering into jamming state.">1</Item>
+            <Item name="Report the alarm messageupon entering into jamming state or quitting jamming state.">2</Item>
+          </Range>
+        </P1>
+        <P2 name="LTE Threshold1">
+          <Default>15</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>20</Right>
+          </Range>
+        </P2>
+        <P3 name="LTE Threshold2">
+          <Default>70</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>130</Right>
+          </Range>
+        </P3>
+        <P5 name="2G Threshold1">
+          <Default>70</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>99</Right>
+          </Range>
+        </P5>
+        <P6 name="2G Threshold2">
+          <Default>2</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>6</Right>
+          </Range>
+        </P6>
+        <P7 name="Enter Jamming Timer Threshold">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P7>
+        <P8 name="Quit Jamming Timer Threshold">
+          <Default>10</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P8>
+        <P9 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P10>
+        <P11 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P11>
+        <P12 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P12>
+      </JDC>
+      <RMD>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P6 name="Start Index1">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P6>
+        <P7 name="End Index1">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P7>
+        <P8 name="Home Operator List">
+          <Len>&lt;=6*10</Len>
+        </P8>
+        <P11 name="Start Index2">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>100</Right>
+          </Range>
+        </P11>
+        <P12 name="End Index2">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>100</Right>
+          </Range>
+        </P12>
+        <P13 name="Roaming Operator List">
+          <Len>&lt;=6*100</Len>
+        </P13>
+        <P16 name="Start Index3">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>20</Right>
+          </Range>
+        </P16>
+        <P17 name="End Index3">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>20</Right>
+          </Range>
+        </P17>
+        <P18 name="Black List Operator">
+          <Len>&lt;=6*20</Len>
+        </P18>
+        <P21 name="Known Roaming Event Mask">
+          <Default>7DEF</Default>
+          <Len>&lt;=6</Len>
+          <Range>
+            <Left>000000</Left>
+            <Right>FFFFFF</Right>
+          </Range>
+        </P21>
+        <P24 name="Unknown Roaming Event Mask">
+          <Default>7DEF</Default>
+          <Len>&lt;=6</Len>
+          <Range>
+            <Left>000000</Left>
+            <Right>FFFFFF</Right>
+          </Range>
+        </P24>
+        <P29 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P29>
+        <P30 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P30>
+        <P31 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P31>
+        <P32 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P32>
+      </RMD>
+      <SOS>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Only Send The Current Position">2</Item>
+            <Item name="Send SOS to the SMS gateway via SMS and make SOS call">4</Item>
+          </Range>
+        </P1>
+        <P2 name="Digital Input ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P2>
+        <P4 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P4>
+        <P5 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P5>
+        <P6 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P6>
+        <P7 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P7>
+        <P10 name="GNSS Position Type">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Send The Current GNSS Location">1</Item>
+            <Item name="Send The Last GNSS Location">2</Item>
+            <Item name="Both Mode 1 And 2">3</Item>
+          </Range>
+        </P10>
+      </SOS>
+      <SPA>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Strict Standard Mode">1</Item>
+            <Item name="Warning mode">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Speed Threshold 1">
+          <Default>50</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P2>
+        <P4 name="Validity">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P4>
+        <P5 name="Alarm Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>4</Right>
+          </Range>
+        </P5>
+        <P8 name="Speed Threshold 2">
+          <Default>70</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P8>
+        <P10 name="Validity">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P10>
+        <P11 name="Alarm Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>4</Right>
+          </Range>
+        </P11>
+        <P14 name="Speed Threshold 3">
+          <Default>90</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P14>
+        <P16 name="Validity">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P16>
+        <P17 name="Alarm Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>4</Right>
+          </Range>
+        </P17>
+        <P20 name="Speed Threshold 4">
+          <Default>110</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P20>
+        <P22 name="Validity">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P22>
+        <P23 name="Alarm Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>4</Right>
+          </Range>
+        </P23>
+      </SPA>
+      <SPD>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Alarm in speed range">1</Item>
+            <Item name="Alarm out of speed range">2</Item>
+            <Item name="Report Speed Alarm Only once">3</Item>
+          </Range>
+        </P1>
+        <P2 name="Min Speed">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P2>
+        <P3 name="Max Speed">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>400</Right>
+          </Range>
+        </P3>
+        <P4 name="Validity">
+          <Default>60</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3600</Right>
+          </Range>
+        </P4>
+        <P5 name="Send Interval">
+          <Default>300</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>30</Left>
+            <Right>3600</Right>
+          </Range>
+        </P5>
+        <P6 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P6>
+        <P7 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P7>
+        <P8 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P8>
+        <P9 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P9>
+      </SPD>
+      <SSR>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Time to Stop">
+          <Default>2</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>30</Right>
+          </Range>
+        </P2>
+        <P3 name="Time to Start">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5</Right>
+          </Range>
+        </P3>
+        <P4 name="Start Speed">
+          <Default>5</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P4>
+        <P5 name="Long Stop">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>43200</Right>
+          </Range>
+        </P5>
+        <P6 name="Time Unit">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Minute">0</Item>
+            <Item name="Second">1</Item>
+          </Range>
+        </P6>
+      </SSR>
+      <TOW>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P1>
+        <P2 name="Engine Off to Tow">
+          <Default>10</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>15</Right>
+          </Range>
+        </P2>
+        <P3 name="Fake Tow Delay">
+          <Default>1</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>10</Right>
+          </Range>
+        </P3>
+        <P4 name="Interval">
+          <Default>300</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>30</Left>
+            <Right>86400</Right>
+          </Range>
+        </P4>
+        <P5 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P5>
+        <P6 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P6>
+        <P7 name="Output Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P7>
+        <P8 name="Output Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P8>
+        <P9 name="Rest Duration">
+          <Default>2</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>255</Right>
+          </Range>
+        </P9>
+        <P10 name="Motion Duration">
+          <Default>3</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P10>
+        <P11 name="Motion Threshold">
+          <Default>2</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>9</Right>
+          </Range>
+        </P11>
+        <P12 name="Tow Distance">
+          <Default>600</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>50</Left>
+            <Right>65535</Right>
+          </Range>
+        </P12>
+      </TOW>
+      <HUM>
+        <P1 name="Alarm ID">
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable humidity alarm.">0</Item>
+            <Item name="Report humidity alarm if the current humidity is within the humidity range defined by &lt;Low Humidity&gt; and &lt;High Humidity&gt;.">1</Item>
+            <Item name="Report humidity alarm if the current humidity is outside the humidity range defined by &lt;Low Humidity&gt; and &lt;High Humidity&gt;.">2</Item>
+            <Item name="Report humidity alarm only once if the current humidity enters/exits the humidity range defined by &lt;Low Humidity&gt; and &lt;High Humidity&gt;. In this mode, &lt;Send Interval&gt; will be ignored.">3</Item>
+          </Range>
+        </P2>
+        <P3 name="Sensor ID">
+          <Len>16</Len>
+          <Range type="AlphaNum6"> </Range>
+        </P3>
+        <P6 name="Low Humidity">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P6>
+        <P7 name="High Humidity">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P7>
+        <P10 name="Validity">
+          <Default>2</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P10>
+        <P11 name="Send Interval">
+          <Default>10</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>60</Right>
+          </Range>
+        </P11>
+        <P14 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P14>
+        <P15 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P15>
+        <P16 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P16>
+        <P17 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P17>
+      </HUM>
+      <AIS>
+        <P1 name="ID">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>1</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable Alarm Within The Range">1</Item>
+            <Item name="Enable Alarm Outside The Range">2</Item>
+          </Range>
+        </P2>
+        <P3 name="Min Threshold">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>16000</Right>
+          </Range>
+        </P3>
+        <P4 name="Max Threshold">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>16000</Right>
+          </Range>
+        </P4>
+        <P5 name="Sample Rate">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>12</Right>
+          </Range>
+        </P5>
+        <P7 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P7>
+        <P8 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P8>
+        <P9 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P9>
+        <P10 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P10>
+        <P11 name="Sync with FRI">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P11>
+        <P17 name="Voltage Margin Error">
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P17>
+      </AIS>
+      <DIS>
+        <P1 name="Ignition Detection">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+        </P1>
+        <P3 name="Debounce Time">
+          <Default>5</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>20</Right>
+          </Range>
+        </P3>
+        <P5 name="Input ID 1">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>1</Right>
+          </Range>
+        </P5>
+        <P6 name="Enable">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P6>
+        <P7 name="Debounce Time">
+          <Default>2</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>20</Right>
+          </Range>
+        </P7>
+        <P8 name="Validity Time">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>12</Right>
+          </Range>
+        </P8>
+        <P9 name="Input ID 2">
+          <Default>2</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>2</Left>
+            <Right>2</Right>
+          </Range>
+        </P9>
+        <P10 name="Enable">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P10>
+        <P11 name="Debounce Time">
+          <Default>2</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>20</Right>
+          </Range>
+        </P11>
+        <P12 name="Validity Time">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>12</Right>
+          </Range>
+        </P12>
+        <P22 name="Last Position">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P22>
+      </DIS>
+      <DOS>
+        <P1 name="Command Frame Version">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+        </P1>
+        <P2 name="Number of Output Ports">
+          <Default>5</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>6</Right>
+          </Range>
+        </P2>
+        <P3 name="Output ID">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>2</Right>
+          </Range>
+        </P3>
+        <P4 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable status.">0</Item>
+            <Item name="Enable status">1</Item>
+            <Item name="Enable GDO status">2</Item>
+          </Range>
+        </P4>
+        <P5 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P5>
+        <P6 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P6>
+      </DOS>
+      <EPS>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Report when the input voltage in the range">1</Item>
+            <Item name="Report when the input voltage outside the range">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Min Threshold">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>32000</Right>
+          </Range>
+        </P2>
+        <P3 name="Max Threshold">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>32000</Right>
+          </Range>
+        </P3>
+        <P4 name="Sample Period">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>12</Right>
+          </Range>
+        </P4>
+        <P5 name="Debounce Time">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5</Right>
+          </Range>
+        </P5>
+        <P6 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P6>
+        <P7 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P7>
+        <P8 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P8>
+        <P9 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P9>
+        <P10 name="Sync with FRI">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Do not report external power supply voltage">0</Item>
+            <Item name="Report external power supply voltage">1</Item>
+          </Range>
+        </P10>
+        <P11 name="Voltage Margin Error">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P11>
+        <P12 name="Debounce Voltage Threshold">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P12>
+        <P13 name="MPN / MPF Validity Time">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>5</Right>
+          </Range>
+        </P13>
+      </EPS>
+      <GDO>
+        <P1 name="Time of First Active Phase">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P1>
+        <P2 name="Cycle Time (Total Time)">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P2>
+        <P3 name="Incremental Step">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P3>
+      </GDO>
+      <IOB>
+        <P1 name="ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Input Mask">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>7</Right>
+          </Range>
+        </P2>
+        <P3 name="Trigger Mask">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>7</Right>
+          </Range>
+        </P3>
+        <P4 name="Input Sample Period">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>12</Right>
+          </Range>
+        </P4>
+        <P5 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P5>
+        <P6 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P6>
+        <P7 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P7>
+        <P8 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P8>
+      </IOB>
+      <CAN>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P1>
+        <P2 name="CAN Report Interval">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P2>
+        <P3 name="CAN Report Interval IGF">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>86400</Right>
+          </Range>
+        </P3>
+        <P4 name="CAN Report Mask">
+          <Default>C00FFFFF</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P4>
+        <P5 name="Additional Event Mask">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>00</Left>
+            <Right>FF</Right>
+          </Range>
+        </P5>
+        <P7 name="CAN Report Expansion Mask">
+          <Default>1FFFFF</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="GNSS Assisted Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable this function.">0</Item>
+            <Item name="Enable this function.">1</Item>
+          </Range>
+        </P8>
+      </CAN>
+      <CLT>
+        <P1 name="Group ID">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>19</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable the CAN alarm function.">0</Item>
+            <Item name="Enable the CAN alarm function.">1</Item>
+          </Range>
+        </P2>
+        <P3 name="Debounce Time">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P3>
+        <P4 name="CAN Data Mask">
+          <Default>000FFFFF</Default>
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P4>
+        <P5 name="Alarm Mask 1">
+          <Default>0</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P5>
+        <P6 name="Alarm Mask 2">
+          <Default>0</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P6>
+        <P7 name="Alarm Mask 3">
+          <Default>0</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="High RPM Threshold">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>100</Right>
+          </Range>
+        </P8>
+        <P9 name="Low RPM Threshold">
+          <Default>8</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>99</Right>
+          </Range>
+        </P9>
+        <P10 name="CAN Report Expansion Mask">
+          <Default>001FFFFF</Default>
+          <Len>&lt;=8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P10>
+        <P12 name="Vehicle Speed High Threshold">
+          <Default>60</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>455</Right>
+          </Range>
+        </P12>
+        <P13 name="Vehicle Speed Low Threshold">
+          <Default>15</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>454</Right>
+          </Range>
+        </P13>
+        <P14 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P14>
+        <P15 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P15>
+        <P16 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P16>
+        <P17 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P17>
+      </CLT>
+      <CFU>
+        <P1 name="Retry Times">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Timeout">
+          <Default>10</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>30</Right>
+          </Range>
+        </P2>
+        <P3 name="Protocol Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="HTTP">0</Item>
+          </Range>
+        </P3>
+        <P4 name="Server User Name">
+          <Len>&lt;=6</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P4>
+        <P5 name="Server Password">
+          <Len>&lt;=6</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P5>
+        <P6 name="Server URL">
+          <Len>100</Len>
+          <Range type="URL"> </Range>
+        </P6>
+        <P7 name="Update Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="CAN Module Firmware">0</Item>
+            <Item name="CAN Module configuration">1</Item>
+          </Range>
+        </P7>
+        <P8 name="Mode">
+          <Default>0</Default>
+          <Len>&lt;=1</Len>
+          <Range>
+            <Item name="Start Upgrade.">0</Item>
+            <Item name="Cancel Upgrade.">1</Item>
+          </Range>
+        </P8>
+      </CFU>
+      <ACD>
+        <P1 name="ID Read Timer">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P1>
+        <P2 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P2>
+        <P3 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P3>
+        <P4 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P4>
+        <P5 name="Toggle">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P5>
+        <P6 name="Data Read Timer">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>10</Left>
+            <Right>255</Right>
+          </Range>
+        </P6>
+        <P9 name="1-wire Data Mask">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FF</Right>
+          </Range>
+        </P9>
+      </ACD>
+      <IEX>
+        <P1 name="Input Expansion Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="EIO100 Setting.">0</Item>
+            <Item name="Bluetooth Accessory Input Setting.">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Bind BAS Index">
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>9</Right>
+          </Range>
+        </P2>
+        <P3 name="Input Number">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>1</Right>
+          </Range>
+        </P3>
+        <P4 name="Input ID">
+          <Default>8</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>8</Left>
+            <Right>8</Right>
+          </Range>
+        </P4>
+      </IEX>
+      <OEX>
+        <P1 name="Output Expansion Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="EIO100 Setting.">0</Item>
+            <Item name="Bluetooth Accessory Input Setting.">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Bind BAS Index">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>9</Right>
+          </Range>
+        </P2>
+        <P3 name="Output Number">
+          <Default>4</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>2</Right>
+          </Range>
+        </P3>
+        <P4 name="Output ID">
+          <Default>7</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>7</Left>
+            <Right>8</Right>
+          </Range>
+        </P4>
+        <P5 name="Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P5>
+        <P6 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P6>
+        <P7 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P7>
+        <P10 name="DOS Report">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P10>
+      </OEX>
+      <UDT>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable the data transfer">0</Item>
+            <Item name="Enable data transmission over Bluetooth">2</Item>
+          </Range>
+        </P1>
+        <P3 name="IGN Send Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>5</Left>
+            <Right>250</Right>
+          </Range>
+        </P3>
+        <P4 name="IGF Sending Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P4>
+        <P6 name="Event Mask">
+          <Default>1</Default>
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P6>
+        <P8 name="Report Item Mask">
+          <Default>00087FFF</Default>
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P8>
+      </UDT>
+      <IDA>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Only authorized ID cards can unlock the vehicle.">1</Item>
+            <Item name="Any ID card can unlock the vehicle.">2</Item>
+          </Range>
+        </P1>
+        <P2 name="Start Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>250</Right>
+          </Range>
+        </P2>
+        <P3 name="End Index">
+          <Default>1</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>250</Right>
+          </Range>
+        </P3>
+        <P4 name="ID Number List">
+          <Len>&lt;=8*28</Len>
+          <Range type="AlphaNum6"> </Range>
+        </P4>
+        <P5 name="Timeout after Ignition Off">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>15</Left>
+            <Right>600</Right>
+          </Range>
+        </P5>
+        <P6 name="Report Mask">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>7</Right>
+          </Range>
+        </P6>
+        <P7 name="ID Validity Time">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>15</Left>
+            <Right>600</Right>
+          </Range>
+        </P7>
+        <P11 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P11>
+        <P12 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P12>
+        <P13 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P13>
+        <P14 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P14>
+        <P16 name="ID List Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="IDA Number List">0</Item>
+            <Item name="MAC List">1</Item>
+          </Range>
+        </P16>
+      </IDA>
+      <TMP>
+        <P1 name="Alarm ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable the Alarm within the temperature range">1</Item>
+            <Item name="Enable the Alarm Outside the temperature range">2</Item>
+            <Item name="Enable the Alarm within or outside the temperature range, But Report only once">3</Item>
+          </Range>
+        </P2>
+        <P3 name="Sensor ID">
+          <Len>16</Len>
+          <Range type="AlphaNum6"> </Range>
+        </P3>
+        <P6 name="Low Temperature">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>-55</Left>
+            <Right>125</Right>
+          </Range>
+        </P6>
+        <P7 name="High Temperature">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>-55</Left>
+            <Right>125</Right>
+          </Range>
+        </P7>
+        <P10 name="Validity">
+          <Default>2</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P10>
+        <P11 name="Send Interval">
+          <Default>10</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>60</Right>
+          </Range>
+        </P11>
+        <P14 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P14>
+        <P15 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P15>
+        <P16 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P16>
+        <P17 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P17>
+      </TMP>
+      <DAT>
+        <P1 name="Command Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Short Format">0</Item>
+            <Item name="Long Format">2</Item>
+            <Item name="Send data directly to the Bluetooth">4</Item>
+            <Item name="Send  data directly to the Bluetooth without CRLF">5</Item>
+          </Range>
+        </P1>
+        <P3 name="Data(ASCII Code)">
+          <Len>&lt;= (200|1280)</Len>
+          <Range type="ASCII0"> </Range>
+        </P3>
+        <P4 name="ACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P4>
+      </DAT>
+      <HUM>
+        <P1 name="Alarm ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable the Alarm within the humidity range">1</Item>
+            <Item name="Enable the Alarm Outside the humidity  range">2</Item>
+            <Item name="Enable the Alarm within or outside the humidity  range, But Report only once">3</Item>
+          </Range>
+        </P2>
+        <P3 name="Sensor ID">
+          <Len>16</Len>
+          <Range type="AlphaNum6"> </Range>
+        </P3>
+        <P6 name="Low Humidity">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P6>
+        <P7 name="High Humidity">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P7>
+        <P10 name="Validity">
+          <Default>2</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>10</Right>
+          </Range>
+        </P10>
+        <P11 name="Send Interval">
+          <Default>10</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>60</Right>
+          </Range>
+        </P11>
+        <P14 name="Output ID">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P14>
+        <P15 name="Output Status">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>2</Right>
+          </Range>
+        </P15>
+        <P16 name="Duration">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P16>
+        <P17 name="Toggle Times">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>255</Right>
+          </Range>
+        </P17>
+      </HUM>
+      <FVR>
+        <P1 name="Configuration Name">
+          <Len>&lt;=40</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P1>
+        <P2 name="Configuration Version">
+          <Len>4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>9999</Right>
+          </Range>
+        </P2>
+        <P7 name="Digital Signature">
+          <Len>32</Len>
+          <Range type="AlphaNum4"> </Range>
+        </P7>
+        <P12 name="Generation Time">
+          <Len>14</Len>
+          <Range type="FullDate"> </Range>
+        </P12>
+      </FVR>
+      <UPC>
+        <P1 name="Max Download Retry">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P1>
+        <P2 name="Download Timeout">
+          <Default>10</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>30</Right>
+          </Range>
+        </P2>
+        <P3 name="Download Protocol">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+        </P3>
+        <P4 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable.">1</Item>
+          </Range>
+        </P4>
+        <P5 name="Update Interval">
+          <Default>0</Default>
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>8760</Right>
+          </Range>
+        </P5>
+        <P6 name="Download URL">
+          <Len>&lt;=100</Len>
+          <Range type="URL"> </Range>
+        </P6>
+        <P7 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P7>
+        <P9 name="Extended Status Report">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="UPC.">0</Item>
+            <Item name="EUC">1</Item>
+          </Range>
+        </P9>
+        <P10 name="Identifier Number">
+          <Default>0</Default>
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P10>
+        <P12 name="Update Status Mask">
+          <Default>3</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>F</Right>
+          </Range>
+        </P12>
+      </UPC>
+      <RTO>
+        <P1 name="Sub Command">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range type="hexNumber">
+            <Item name="Get the GNSS related information">0</Item>
+            <Item name="RTL. Request the terminal to report its current position immediately">1</Item>
+            <Item name="Get the current configuration of the terminal.">2</Item>
+            <Item name="Reboot the terminal.">3</Item>
+            <Item name="RESET. Reset all parameters to factory settings.">4</Item>
+            <Item name="Power off the device.">5</Item>
+            <Item name="Get the ICCID of the SIM card which is being used by the terminal">6</Item>
+            <Item name="Get the current GSM signal level of the terminal">7</Item>
+            <Item name="Get the version information of the device">8</Item>
+            <Item name="Get the battery level and adapter status of the terminal.">9</Item>
+            <Item name="Get status of all the IO ports.">A</Item>
+            <Item name="Get the time zone settings">B</Item>
+            <Item name="Get cell information.">C</Item>
+            <Item name="Get APN, ICCID, base station ID, RSSI, cell ID, IP and DNS server">D</Item>
+            <Item name="Get CAN information.">10</Item>
+            <Item name="Get the version number information of CAN Module">12</Item>
+            <Item name="Get the serial number information of CAN100">13</Item>
+            <Item name="Commands for Bluetooth">14</Item>
+            <Item name="Get basic device information">1C</Item>
+            <Item name="Set car model for CAN Module or read car model from CAN Module">22</Item>
+            <Item name="Delete all the buffered reports">31</Item>
+            <Item name="Set the state of the WRL300">3A</Item>
+          </Range>
+        </P1>
+        <P2 name="Optional 1">
+          <Len>0</Len>
+        </P2>
+        <P3 name="Optional 2">
+          <Len>0</Len>
+        </P3>
+        <P4 name="Optional 3">
+          <Len>0</Len>
+        </P4>
+      </RTO>
+    </Commands>
+    <Ascii />
+    <Hex />
+  </AirProtocol>
+</Project>

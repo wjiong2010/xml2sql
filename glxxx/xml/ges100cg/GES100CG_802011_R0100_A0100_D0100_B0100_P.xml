@@ -1,0 +1,1644 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project xmlversion="1.00" root="0100" protocol="0100" qldbg="0100" qble="0100" device_type="802011" name="GES100CG" password="ges100cg" sub_title="LTE Cat-1/LTE/GNSS Tracker">
+  <Support>
+    <S_LTE-Cat1 name="LTE-Cat1"> </S_LTE-Cat1>
+    <S_2G name="2G"> </S_2G>
+    <S_Format name="Format">1</S_Format>
+    <S_IBattery name="IBattery"> </S_IBattery>
+    <S_SMS name="SMS"> </S_SMS>
+    <S_Version name="Version">FF</S_Version>
+  </Support>
+  <AirProtocol ver="0100">
+    <Commands>
+      <BSI>
+        <P1 name="APN">
+          <Len>&lt;=64</Len>
+        </P1>
+        <P2 name="APN User Name">
+          <Len>&lt;=30</Len>
+        </P2>
+        <P3 name="APN Password">
+          <Len>&lt;=30</Len>
+        </P3>
+        <P4 name="Backup APN">
+          <Len>&lt;=64</Len>
+        </P4>
+        <P5 name="Backup APN User Name">
+          <Len>&lt;=30</Len>
+        </P5>
+        <P6 name="Backup APN Password">
+          <Len>&lt;=30</Len>
+        </P6>
+        <P7 name="Network Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Auto (LTE &amp; GSM).">0</Item>
+            <Item name="GSM Only.">1</Item>
+            <Item name="LTE Only.">3</Item>
+          </Range>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+      </BSI>
+      <SRI>
+        <P1 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Stop mode">0</Item>
+            <Item name="TCP short-connection preferred mode">1</Item>
+            <Item name="TCP short-connection forced mode">2</Item>
+            <Item name="TCP long-connection mode">3</Item>
+            <Item name="UDP mode">4</Item>
+            <Item name="Forced SMS mode">5</Item>
+            <Item name="UDP with fixed local port mode">6</Item>
+            <Item name="Backup server supported TCP long-connection mode">7</Item>
+          </Range>
+        </P1>
+        <P2 name="Reserved">
+          <Len>0</Len>
+        </P2>
+        <P3 name="Reserved">
+          <Len>0</Len>
+        </P3>
+        <P4 name="Main Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P4>
+        <P5 name="W15">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P5>
+        <P6 name="Backup Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P6>
+        <P7 name="Backup Port">
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P7>
+        <P8 name="SMS Gateway">
+          <Len>&lt;=20</Len>
+        </P8>
+        <P9 name="Heartbeat Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>360</Right>
+          </Range>
+        </P9>
+        <P10 name="SACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable SACK And Check">1</Item>
+          </Range>
+        </P10>
+        <P11 name="Reserved">
+          <Len>0</Len>
+        </P11>
+        <P12 name="SMS ACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item>0</Item>
+            <Item>1</Item>
+          </Range>
+        </P12>
+        <P13 name="Reserved">
+          <Len>0</Len>
+        </P13>
+        <P14 name="Reserved">
+          <Len>0</Len>
+        </P14>
+        <P15 name="Reserved">
+          <Len>0</Len>
+        </P15>
+        <P16 name="Reserved">
+          <Len>0</Len>
+        </P16>
+        <P17 name="Reserved">
+          <Len>0</Len>
+        </P17>
+      </SRI>
+      <QSS>
+        <P1 name="APN">
+          <Len>&lt;=64</Len>
+        </P1>
+        <P2 name="APN User Name">
+          <Len>&lt;=30</Len>
+        </P2>
+        <P3 name="APN Password">
+          <Len>&lt;=30</Len>
+        </P3>
+        <P4 name="Report Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Stop mode">0</Item>
+            <Item name="TCP short-connection preferred mode">1</Item>
+            <Item name="TCP short-connection forced mode">2</Item>
+            <Item name="TCP long-connection mode">3</Item>
+            <Item name="UDP mode">4</Item>
+            <Item name="Forced SMS mode">5</Item>
+            <Item name="UDP with fixed local port mode">6</Item>
+            <Item name="Backup server supported TCP long-connection mode">7</Item>
+          </Range>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Reserved">
+          <Len>0</Len>
+        </P6>
+        <P7 name="Main Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P7>
+        <P8 name="Main Port">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P8>
+        <P9 name="Backup Domain">
+          <Len>&lt;=60</Len>
+          <Range type="ASCII1"> </Range>
+        </P9>
+        <P10 name="Backup Port">
+          <Default>0</Default>
+          <Len>&lt;=5</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>65535</Right>
+          </Range>
+        </P10>
+        <P11 name="SMS Gateway">
+          <Len>&lt;=20</Len>
+        </P11>
+        <P12 name="Heartbeat Interval">
+          <Default>0</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Item>0</Item>
+          </Range>
+          <Range>
+            <Left>2</Left>
+            <Right>360</Right>
+          </Range>
+        </P12>
+        <P13 name="SACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable SACK And Check">1</Item>
+          </Range>
+        </P13>
+        <P14 name="Reserved">
+          <Len>0</Len>
+        </P14>
+        <P15 name="SMS ACK Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="The device will send the acknowledgement message to the backend server according to the setting of &lt;Report Mode&gt;.">0</Item>
+            <Item name="The device will send the acknowledgement message to the original number via SMS if the command is received via SMS.">1</Item>
+          </Range>
+        </P15>
+        <P16 name="Reserved">
+          <Len>0</Len>
+        </P16>
+        <P17 name="Reserved">
+          <Len>0</Len>
+        </P17>
+      </QSS>
+      <CFG>
+        <P1 name="New Password">
+          <Default>ges100cg</Default>
+          <Len>4 - 20</Len>
+          <Range type="AlphaNum4"> </Range>
+        </P1>
+        <P2 name="Device Name">
+          <Default>GES100CG</Default>
+          <Len>&lt;=20</Len>
+          <Range type="AlphaNum5"> </Range>
+        </P2>
+        <P3 name="Reserved">
+          <Len>0</Len>
+        </P3>
+        <P4 name="Reserved">
+          <Len>0</Len>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Reserved">
+          <Len>0</Len>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+        <P10 name="Event Mask">
+          <Default>DE3</Default>
+          <Len>&lt;=6</Len>
+          <Range filter="C21">
+            <Left>000000</Left>
+            <Right>FFFFFF</Right>
+          </Range>
+        </P10>
+        <P11 name="Reserved">
+          <Len>0</Len>
+        </P11>
+        <P12 name="Reserved">
+          <Len>0</Len>
+        </P12>
+        <P13 name="Reserved">
+          <Len>0</Len>
+        </P13>
+        <P14 name="Reserved">
+          <Len>0</Len>
+        </P14>
+        <P15 name="Reserved">
+          <Len>0</Len>
+        </P15>
+        <P16 name="Reserved">
+          <Len>0</Len>
+        </P16>
+        <P17 name="Reserved">
+          <Len>0</Len>
+        </P17>
+        <P18 name="Reserved">
+          <Len>0</Len>
+        </P18>
+        <P19 name="Cell Report">
+          <Default>4005</Default>
+          <Len>4</Len>
+          <Range>
+            <Left>0000</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P19>
+        <P20 name="Reserved">
+          <Len>0</Len>
+        </P20>
+        <P21 name="Reserved">
+          <Len>0</Len>
+        </P21>
+        <P22 name="Reserved">
+          <Len>0</Len>
+        </P22>
+      </CFG>
+      <TMA>
+        <P1 name="Sign">
+          <Default>+</Default>
+          <Len>1</Len>
+          <Range type="PlusSub"> </Range>
+        </P1>
+        <P2 name="Hour Offset">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>12</Right>
+          </Range>
+        </P2>
+        <P3 name="Minute Offset">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>59</Right>
+          </Range>
+        </P3>
+        <P4 name="Daylight Saving">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P4>
+        <P5 name="UTC Time">
+          <Len>14</Len>
+          <Range type="FullDate"> </Range>
+        </P5>
+        <P6 name="Network Time Checking">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+      </TMA>
+      <FKS>
+        <P1 name="Power key mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="The power key can be pressed to power on the device but cannot power it off.">0</Item>
+            <Item name="The power key can be pressed to power on/off the device.">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Full power on">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Do not power on the terminal completely.">0</Item>
+            <Item name="Power on the terminal completely.">1</Item>
+          </Range>
+        </P2>
+        <P3 name="Reserved">
+          <Len>0</Len>
+        </P3>
+        <P4 name="Reserved">
+          <Len>0</Len>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Reserved">
+          <Len>0</Len>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+      </FKS>
+      <PSM>
+        <P1 name="Reserved">
+          <Len>0</Len>
+        </P1>
+        <P2 name="Reserved">
+          <Len>0</Len>
+        </P2>
+        <P3 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>1</Right>
+          </Range>
+        </P3>
+        <P4 name="Reserved">
+          <Len>0</Len>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Wakeup Interval">
+          <Default>23</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>1</Left>
+            <Right>72</Right>
+          </Range>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+        <P10 name="Continuous Send Interval">
+          <Default>30</Default>
+          <Len>&lt;=2</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>60</Right>
+          </Range>
+        </P10>
+        <P11 name="Reserved">
+          <Len>0</Len>
+        </P11>
+      </PSM>
+      <COA>
+        <P1 name="Reserved">
+          <Len>0</Len>
+        </P1>
+        <P2 name="Reserved">
+          <Len>0</Len>
+        </P2>
+        <P3 name="Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Disable">0</Item>
+            <Item name="Enable">1</Item>
+          </Range>
+        </P3>
+        <P4 name="Reserved">
+          <Len>0</Len>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Alarm Interval">
+          <Default>30</Default>
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>5</Left>
+            <Right>600</Right>
+          </Range>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+      </COA>
+      <RTO>
+        <P1 name="Sub Command">
+          <Default>0</Default>
+          <Len>&lt;=2</Len>
+          <Range type="hexNumber">
+            <Item name="GNSS. Get the GNSS related information via the message +RESP">0</Item>
+            <Item name="RTL. Request the terminal to report its current position immediately via the message +RESP">1</Item>
+            <Item name="READ. Get the current configuration of the terminal via the message +RESP">2</Item>
+            <Item name="REBOOT. Reboot the terminal">3</Item>
+            <Item name="RESET. Reset all parameters to factory settings">4</Item>
+            <Item name="PWROFF. Power off the device">5</Item>
+            <Item name="CID. Get the ICCID of the SIM card which is being used by the terminal via the message +RESP">6</Item>
+            <Item name="CSQ. Get the current GSM signal level of the terminal via the message +RESP">7</Item>
+            <Item name="VER. Get the version information of the device via the message +RESP">8</Item>
+            <Item name="BAT.Get the battery level and adapter status of the terminal via the message +RESP">9</Item>
+            <Item name="TMZ. Get the time zone settings via the message +RESP">A</Item>
+            <Item name="DELBUF. Delete all the buffered reports.">D</Item>
+            <Item name="GSV/BSV. Request the device to report the GNSS satellites information via the message +RESP">E</Item>
+            <Item name="GIR. Get cell information via the message +RESP">F</Item>
+          </Range>
+        </P1>
+        <P2 name="Reserved">
+          <Len>0</Len>
+        </P2>
+        <P3 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P3>
+        <P4 name="Reserved">
+          <Len>0</Len>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+        <P8 name="Configuration Mask">
+          <Len>3 – 79</Len>
+          <Range>
+            <Item>SRI</Item>
+          </Range>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+        <P10 name="Reserved">
+          <Len>0</Len>
+        </P10>
+        <P11 name="Reserved">
+          <Len>0</Len>
+        </P11>
+        <P12 name="Reserved">
+          <Len>0</Len>
+        </P12>
+        <P13 name="Reserved">
+          <Len>0</Len>
+        </P13>
+        <P14 name="AT Command">
+          <Len>3 – 79</Len>
+          <Range>
+            <Item>SRI</Item>
+          </Range>
+        </P14>
+        <P15 name="Reserved">
+          <Len>0</Len>
+        </P15>
+        <P16 name="Reserved">
+          <Len>0</Len>
+        </P16>
+        <P17 name="Reserved">
+          <Len>0</Len>
+        </P17>
+        <P18 name="Reserved">
+          <Len>0</Len>
+        </P18>
+        <P19 name="Reserved">
+          <Len>0</Len>
+        </P19>
+        <P20 name="Reserved">
+          <Len>0</Len>
+        </P20>
+        <P21 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P21>
+        <P22 name="Reserved">
+          <Len>0</Len>
+        </P22>
+        <P23 name="Reserved">
+          <Len>0</Len>
+        </P23>
+        <P24 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P24>
+        <P25 name="Reserved">
+          <Len>0</Len>
+        </P25>
+        <P26 name="Reserved">
+          <Len>0</Len>
+        </P26>
+        <P27 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P27>
+        <P28 name="Reserved">
+          <Len>0</Len>
+        </P28>
+        <P29 name="Reserved">
+          <Len>0</Len>
+        </P29>
+        <P30 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P30>
+        <P31 name="Reserved">
+          <Len>0</Len>
+        </P31>
+        <P32 name="Reserved">
+          <Len>0</Len>
+        </P32>
+        <P33 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P33>
+        <P34 name="Reserved">
+          <Len>0</Len>
+        </P34>
+        <P35 name="Reserved">
+          <Len>0</Len>
+        </P35>
+        <P36 name="Reserved">
+          <Len>0</Len>
+        </P36>
+        <P37 name="Reserved">
+          <Len>0</Len>
+        </P37>
+        <P38 name="Satellite Information Mask">
+          <Len>1</Len>
+          <Range filter="5">
+            <Left>00</Left>
+            <Right>FF</Right>
+          </Range>
+        </P38>
+        <P39 name="Output Direction">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Backend Server">0</Item>
+            <Item name="SMS number Or Backend Server">3</Item>
+          </Range>
+        </P39>
+        <P40 name="Reserved">
+          <Len>0</Len>
+        </P40>
+        <P41 name="Reserved">
+          <Len>0</Len>
+        </P41>
+        <P42 name="Reserved">
+          <Len>0</Len>
+        </P42>
+        <P43 name="Reserved">
+          <Len>0</Len>
+        </P43>
+        <P47 name="Reserved">
+          <Len>0</Len>
+        </P47>
+        <P48 name="Reserved">
+          <Len>0</Len>
+        </P48>
+      </RTO>
+      <RTP>
+        <P1 name="Mode">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Download File">0</Item>
+          </Range>
+        </P1>
+        <P2 name="Protocol Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="HTTP">0</Item>
+          </Range>
+        </P2>
+        <P3 name="File Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="CA certificate.">0</Item>
+            <Item name="Client Certificate">1</Item>
+            <Item name="Client key">2</Item>
+          </Range>
+        </P3>
+        <P4 name="URL">
+          <Len>&lt;=100</Len>
+          <Range type="ASCII3"> </Range>
+        </P4>
+        <P5 name="Reserved">
+          <Len>0</Len>
+        </P5>
+        <P6 name="Reserved">
+          <Len>0</Len>
+        </P6>
+        <P7 name="Reserved">
+          <Len>0</Len>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+      </RTP>
+      <LTP>
+        <P1 name="Reserved">
+          <Len>0</Len>
+        </P1>
+        <P2 name="Mode">
+          <Default>1</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Delete File">0</Item>
+            <Item name="Import File">1</Item>
+          </Range>
+        </P2>
+        <P3 name="File Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="CA certificate">0</Item>
+            <Item name="Client Certificate">1</Item>
+            <Item name="Client key">2</Item>
+          </Range>
+        </P3>
+        <P4 name="Current Number">
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P4>
+        <P5 name="Total Number">
+          <Len>&lt;=3</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>100</Right>
+          </Range>
+        </P5>
+        <P6 name="Data">
+          <Len>&lt;=512</Len>
+          <Range type="HEX"> </Range>
+        </P6>
+        <P7 name="CRC">
+          <Len>&lt;=4</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>FFFF</Right>
+          </Range>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Reserved">
+          <Len>0</Len>
+        </P9>
+        <P10 name="Reserved">
+          <Len>0</Len>
+        </P10>
+        <P11 name="Reserved">
+          <Len>0</Len>
+        </P11>
+      </LTP>
+      <UPD>
+        <P1 name="Sub-command">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Start the Firmware Update0">0</Item>
+            <Item name="Cancel the current firmware update process">1</Item>
+          </Range>
+        </P1>
+        <P2 name="Max Download Retry">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Left>0</Left>
+            <Right>3</Right>
+          </Range>
+        </P2>
+        <P3 name="Download Timeout">
+          <Default>20</Default>
+          <Len>2</Len>
+          <Range>
+            <Left>10</Left>
+            <Right>30</Right>
+          </Range>
+        </P3>
+        <P4 name="Download Protocol">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="HTTP.">0</Item>
+          </Range>
+        </P4>
+        <P5 name="Download User Name">
+          <Len>&lt;=6</Len>
+          <Range type="AlphaNum4"> </Range>
+        </P5>
+        <P6 name="Download Password">
+          <Len>&lt;=6</Len>
+          <Range type="AlphaNum4"> </Range>
+        </P6>
+        <P7 name="Download URL">
+          <Len>&lt;=100</Len>
+          <Range>
+            <Item>legal URL</Item>
+          </Range>
+        </P7>
+        <P8 name="Reserved">
+          <Len>0</Len>
+        </P8>
+        <P9 name="Update Type">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="BB firmware update.">0</Item>
+          </Range>
+        </P9>
+        <P10 name="Extended Status Report">
+          <Default>0</Default>
+          <Len>1</Len>
+          <Range>
+            <Item name="Report the +RESP">0</Item>
+            <Item name="Report the +RESP">1</Item>
+          </Range>
+        </P10>
+        <P11 name="Identifier Number">
+          <Len>8</Len>
+          <Range>
+            <Left>00000000</Left>
+            <Right>FFFFFFFF</Right>
+          </Range>
+        </P11>
+        <P12 name="Reserved">
+          <Len>0</Len>
+        </P12>
+        <P13 name="Reserved">
+          <Len>0</Len>
+        </P13>
+        <P14 name="Reserved">
+          <Len>0</Len>
+        </P14>
+        <P15 name="Reserved">
+          <Len>0</Len>
+        </P15>
+      </UPD>
+    </Commands>
+    <Ascii>
+      <POSI>
+        <G1 member="RTL | PNL | PFL | COA">
+          <P1 name="Report ID">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>4</Right>
+            </Range>
+          </P1>
+          <P2 name="Report Type">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>6</Right>
+            </Range>
+          </P2>
+          <P3 name="Number">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>1</Left>
+              <Right>15</Right>
+            </Range>
+          </P3>
+          <P4 name="GNSS Accuracy">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>50</Right>
+            </Range>
+          </P4>
+          <P5 name="Speed">
+            <Len>&lt;=5</Len>
+            <Range>
+              <Left>0.0</Left>
+              <Right>999.9</Right>
+            </Range>
+          </P5>
+          <P6 name="Azimuth">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>359</Right>
+            </Range>
+          </P6>
+          <P7 name="Altitude">
+            <Len>&lt;=8</Len>
+            <Range type="Alti"> </Range>
+          </P7>
+          <P8 name="Longitude">
+            <Len>&lt;=11</Len>
+            <Range type="Lng"> </Range>
+          </P8>
+          <P9 name="Latitude">
+            <Len>&lt;=10</Len>
+            <Range type="Lat"> </Range>
+          </P9>
+          <P10 name="GNSS UTC Time">
+            <Len>14</Len>
+            <Range type="FullDate"> </Range>
+          </P10>
+          <P11 name="MCC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P11>
+          <P12 name="MNC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P12>
+          <P13 name="LAC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P13>
+          <P14 name="Cell ID">
+            <Len>4|8</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+            <Range>
+              <Left>00000000</Left>
+              <Right>FFFFFFFF</Right>
+            </Range>
+          </P14>
+          <P16 name="Battery Percentage">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>100</Right>
+            </Range>
+          </P16>
+        </G1>
+        <G2 member="FRI">
+          <P1 name="Report ID">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>4</Right>
+            </Range>
+          </P1>
+          <P2 name="Report Type">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>6</Right>
+            </Range>
+          </P2>
+          <P3 name="Number">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>1</Left>
+              <Right>15</Right>
+            </Range>
+          </P3>
+          <P4 name="GNSS Accuracy">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>50</Right>
+            </Range>
+          </P4>
+          <P5 name="Speed">
+            <Len>&lt;=5</Len>
+            <Range>
+              <Left>0.0</Left>
+              <Right>999.9</Right>
+            </Range>
+          </P5>
+          <P6 name="Azimuth">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>359</Right>
+            </Range>
+          </P6>
+          <P7 name="Altitude">
+            <Len>&lt;=8</Len>
+            <Range type="Alti"> </Range>
+          </P7>
+          <P8 name="Longitude">
+            <Len>&lt;=11</Len>
+            <Range type="Lng"> </Range>
+          </P8>
+          <P9 name="Latitude">
+            <Len>&lt;=10</Len>
+            <Range type="Lat"> </Range>
+          </P9>
+          <P10 name="GNSS UTC Time">
+            <Len>14</Len>
+            <Range type="FullDate"> </Range>
+          </P10>
+          <P11 name="MCC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P11>
+          <P12 name="MNC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P12>
+          <P13 name="LAC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P13>
+          <P14 name="Cell ID">
+            <Len>4|8</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+            <Range>
+              <Left>00000000</Left>
+              <Right>FFFFFFFF</Right>
+            </Range>
+          </P14>
+          <P16 name="Battery Percentage">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>100</Right>
+            </Range>
+          </P16>
+        </G2>
+        <G4 member="GSM">
+          <P1 name="Fix Type">
+            <Len>3</Len>
+            <Range>
+              <Item>RTL</Item>
+            </Range>
+            <Range>
+              <Item>FRI</Item>
+            </Range>
+            <Range>
+              <Item>GIR</Item>
+            </Range>
+          </P1>
+          <P2 name="MCC1">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P2>
+          <P3 name="MNC1">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P3>
+          <P4 name="LAC1">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P4>
+          <P5 name="Cell ID1">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P5>
+          <P6 name="RX Level1">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item name="-110 dBm">0</Item>
+              <Item name="-109 to -48 dBm">1 to 62</Item>
+              <Item name="-47 dBm">63</Item>
+            </Range>
+          </P6>
+          <P8 name="MCC2">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P8>
+          <P9 name="MNC2">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P9>
+          <P10 name="LAC2">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P10>
+          <P11 name="Cell ID2">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P11>
+          <P12 name="RX Level2">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P12>
+          <P14 name="MCC3">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P14>
+          <P15 name="MNC3">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P15>
+          <P16 name="LAC3">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P16>
+          <P17 name="Cell ID3">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P17>
+          <P18 name="RX Level3">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P18>
+          <P20 name="MCC4">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P20>
+          <P21 name="MNC4">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P21>
+          <P22 name="LAC4">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P22>
+          <P23 name="Cell ID4">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P23>
+          <P24 name="RX Level4">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P24>
+          <P26 name="MCC5">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P26>
+          <P27 name="MNC5">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P27>
+          <P28 name="LAC5">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P28>
+          <P29 name="Cell ID5">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P29>
+          <P30 name="RX Level5">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P30>
+          <P32 name="MCC6">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P32>
+          <P33 name="MNC6">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P33>
+          <P34 name="LAC6">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P34>
+          <P35 name="Cell ID6">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P35>
+          <P36 name="RX Level6">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P36>
+          <P38 name="MCC">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P38>
+          <P39 name="MNC">
+            <Len>4</Len>
+            <Range>
+              <Item>0XXX</Item>
+            </Range>
+          </P39>
+          <P40 name="LAC">
+            <Len>4</Len>
+            <Range>
+              <Item>XXXX</Item>
+            </Range>
+          </P40>
+          <P41 name="Cell ID">
+            <Len>4|8</Len>
+            <Range>
+              <Item>XXXX/XXXXXXXX</Item>
+            </Range>
+          </P41>
+          <P42 name="RX Level">
+            <Len>2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+          </P42>
+          <P43 name="Report Append Mask">
+            <Len>2</Len>
+            <Range>
+              <Left>00</Left>
+              <Right>FF</Right>
+            </Range>
+          </P43>
+          <P44 name="Battery Percentage (Optional)">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>100</Right>
+            </Range>
+          </P44>
+          <P45 name="Time Advance (Optional)">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>63</Right>
+            </Range>
+            <Range>
+              <Item>99</Item>
+            </Range>
+          </P45>
+          <P46 name="RF radio status (optional)">
+            <Len>1</Len>
+            <Range>
+              <Item>0</Item>
+            </Range>
+            <Range>
+              <Item>1</Item>
+            </Range>
+          </P46>
+          <P47 name="RF channel frequency (optional)">
+            <Len>&lt;=5</Len>
+            <Range>
+              <Left>433.00</Left>
+              <Right>434.90</Right>
+            </Range>
+          </P47>
+          <P48 name="Temperature (Optional)">
+            <Len>&lt;=5</Len>
+            <Range>
+              <Item>(-)xx.x</Item>
+            </Range>
+          </P48>
+        </G4>
+      </POSI>
+      <RTRP>
+        <G1 member="GPS">
+          <P4 name="Report Composition Mask">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P4>
+          <P7 name="Last Fix UTC Time">
+            <Len>14</Len>
+            <Range type="FullDate"> </Range>
+          </P7>
+        </G1>
+        <G2 member="ALM">
+          <P2 name="Total Packets">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>1</Left>
+              <Right>6</Right>
+            </Range>
+          </P2>
+          <P3 name="Current Packet">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>1</Left>
+              <Right>6</Right>
+            </Range>
+          </P3>
+          <P4 name="Configurations">
+            <Len>&lt;=1500</Len>
+          </P4>
+        </G2>
+        <G3 member="CID">
+          <P1 name="ICCID">
+            <Len>20</Len>
+            <Range type="AlphaNum7"> </Range>
+          </P1>
+        </G3>
+        <G4 member="CSQ">
+          <P1 name="CSQ RSSI|RSRP">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>31</Right>
+            </Range>
+            <Range>
+              <Left>99</Left>
+              <Right>99</Right>
+            </Range>
+            <Range>
+              <Left>0</Left>
+              <Right>97</Right>
+            </Range>
+            <Range>
+              <Left>255</Left>
+              <Right>255</Right>
+            </Range>
+          </P1>
+          <P2 name="CSQ BER">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>7</Right>
+            </Range>
+            <Range>
+              <Left>99</Left>
+              <Right>99</Right>
+            </Range>
+          </P2>
+        </G4>
+        <G5 member="VER">
+          <P1 name="Device Type">
+            <Len>6</Len>
+            <Range type="AlphaNum4"> </Range>
+          </P1>
+          <P2 name="Software Version">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P2>
+          <P3 name="Hardware Version">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P3>
+        </G5>
+        <G7 member="TMZ">
+          <P1 name="Time Zone Offset">
+            <Len>5</Len>
+            <Range type="Time3"> </Range>
+          </P1>
+          <P2 name="Daylight Saving">
+            <Len>1</Len>
+            <Range>
+              <Item>0</Item>
+            </Range>
+            <Range>
+              <Item>1</Item>
+            </Range>
+          </P2>
+          <P3 name="Network Time Checking">
+            <Len>1</Len>
+            <Range>
+              <Item>0</Item>
+            </Range>
+            <Range>
+              <Item>1</Item>
+            </Range>
+          </P3>
+        </G7>
+        <G8 member="GSV">
+          <P1 name="SV Count">
+            <Len>2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>24</Right>
+            </Range>
+          </P1>
+          <P2 name="SV ID">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P2>
+          <P3 name="SV Power">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P3>
+          <P4 name="…" />
+          <P5 name="SV ID">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P5>
+          <P6 name="SV Power">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P6>
+        </G8>
+        <G9 member="BSV">
+          <P1 name="SV Count">
+            <Len>2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>32</Right>
+            </Range>
+          </P1>
+          <P2 name="SV ID">
+            <Len>2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P2>
+          <P3 name="SV Power">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P3>
+          <P4 name="…" />
+          <P5 name="SV ID">
+            <Len>2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P5>
+          <P6 name="SV Power">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item>&gt; =0</Item>
+            </Range>
+          </P6>
+        </G9>
+      </RTRP>
+      <EVNT>
+        <G1 member="PNA | PDP">
+          <P1 name="Power On Type">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Item name="Specified time reached">2</Item>
+              <Item name="Manual power on for the first time">4</Item>
+              <Item name="RTO command">5</Item>
+              <Item name="Abnormal power on">6</Item>
+              <Item name="RTC error">7</Item>
+              <Item name="FOTA process">8</Item>
+              <Item name="CUT OFF POWER ON">24</Item>
+            </Range>
+          </P1>
+        </G1>
+        <G5 member="BPL">
+          <P1 name="Battery Voltage">
+            <Len>&lt;=4</Len>
+            <Range>
+              <Left>0.00</Left>
+              <Right>4.50</Right>
+            </Range>
+          </P1>
+          <P2 name="GNSS Accuracy">
+            <Len>&lt;=2</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>50</Right>
+            </Range>
+          </P2>
+          <P3 name="Speed">
+            <Len>&lt;=5</Len>
+            <Range>
+              <Left>0.0</Left>
+              <Right>999.9</Right>
+            </Range>
+          </P3>
+          <P4 name="Azimuth">
+            <Len>&lt;=3</Len>
+            <Range>
+              <Left>0</Left>
+              <Right>359</Right>
+            </Range>
+          </P4>
+          <P5 name="Altitude">
+            <Len>&lt;=8</Len>
+            <Range type="Alti"> </Range>
+          </P5>
+          <P6 name="Longitude">
+            <Len>&lt;=11</Len>
+            <Range type="Lng"> </Range>
+          </P6>
+          <P7 name="Latitude">
+            <Len>&lt;=10</Len>
+            <Range type="Lat"> </Range>
+          </P7>
+          <P8 name="GNSS UTC Time">
+            <Len>14</Len>
+            <Range type="FullDate"> </Range>
+          </P8>
+          <P9 name="MCC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P9>
+          <P10 name="MNC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>0FFF</Right>
+            </Range>
+          </P10>
+          <P11 name="LAC">
+            <Len>4</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+          </P11>
+          <P12 name="Cell ID">
+            <Len>4|8</Len>
+            <Range>
+              <Left>0000</Left>
+              <Right>FFFF</Right>
+            </Range>
+            <Range>
+              <Left>00000000</Left>
+              <Right>FFFFFFFF</Right>
+            </Range>
+          </P12>
+        </G5>
+      </EVNT>
+      <CONR>
+        <G1 member="HBD" />
+        <G2 member="ACK">
+          <P1 name="Option">
+            <Len>N</Len>
+          </P1>
+        </G2>
+      </CONR>
+    </Ascii>
+    <Hex />
+  </AirProtocol>
+</Project>
