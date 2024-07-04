@@ -123,13 +123,7 @@ class DocumentBuilder:
                                       f"{self.project_name}_{self.project_id}_R{self.root_ver}_A{self.project_ver}_D0100_B0100_P.xml")
         print(f"pre_path: {self.pre_path}, prj_type: {dc.prj_type}")
 
-    def copy_draft(self):
-        self._dft = os.path.join(os.getcwd(), "draft", "root")
-        print(f"Copying draft, {self._dft}, to {self._rel_dft}")
-        if os.path.exists(self._rel_dft):
-            delete_folder(self._rel_dft)
-        # os.mkdir(self._rel_dft)
-        shutil.copytree(self._dft, self._rel_dft)
+        self.dest_folder = os.path.join(self.root_path, "excel")
 
     def xml_parser(self, t=0):
         if len(self.r_xml) != 0:
@@ -143,8 +137,6 @@ class DocumentBuilder:
     # ----------------------------------------------------------------------------------------------------------------------
     def args_parser(self, args_list):
         # print(f"args_list:{args_list}")
-        get_prj_name = False
-        get_prj_ver = False
         arg_cnt = 0
         for arg in args_list:
             arg_value = ""
@@ -157,14 +149,6 @@ class DocumentBuilder:
             print(f"arg_name: {arg_name}, arg_value: {arg_value}")
 
             match arg_name:
-                case "-draft":
-                    self.work_mode["draft"] = True
-                case "-RV":
-                    # Root xml version
-                    arg_cnt += 1
-                    # print(f"-RV arg_cnt:{arg_cnt}, arg:{args_list[arg_cnt]}")
-                    self.work_mode["root"] = True
-                    self.root_ver = args_list[arg_cnt]
                 case "-P":
                     # Project Name
                     arg_cnt += 1
@@ -181,86 +165,34 @@ class DocumentBuilder:
                     self.project_ver = args_list[arg_cnt]
                 case "-PType":
                     dc.project_type_proc(arg_value)
-                case "-DVer":
-                    # project protocol version
-                    arg_cnt += 1
-                    print(f"-DVer, {args_list[arg_cnt]}")
-                    self.doc_ver = args_list[arg_cnt]
-                    dc.doc_ver = self.doc_ver
-                case "-docx":
-                    # Enable docx convert:
-                    # no_extract
-                    # extract_and_trans(default)
-                    if arg_value != "":
-                        self.work_mode["docx_trans"] = dc.OPTIONS_DICT[arg_value]
-                    else:
-                        self.work_mode["docx_trans"] = dc.OPTIONS_DICT["extract_and_trans"]
-                case "-format":
-                    # html(default), docx, pdf, all
-                    # if -type is quickstart or usermanual, only pdf is supported
-                    if arg_value != "":
-                        self.work_mode["format"] = arg_value
-                    else:
-                        self.work_mode["format"] = "html"
-                case "-type":
-                    # 0: air(default), 1: releasenote, 2:quickstart, 3:usermanual
-                    _doc_type = args_list[arg_cnt]
-                    if arg_value != "":
-                        self.work_mode["doc_type"] = dc.OPTIONS_DICT[arg_value]
-                    if self.work_mode["doc_type"] == dc.OPTIONS_DICT["quickstart"]:
-                        self.doc_ver = "0100"
-                        dc.doc_ver = self.doc_ver
+
                 case "--help":
-                    arg_cnt = 0
+                    arg_cnt = 1
                     break
                 case _:
                     arg_cnt += 1
                     continue
 
-        if (self.work_mode["doc_type"] != dc.OPTIONS_DICT["quickstart"] and
-                self.work_mode["doc_type"] != dc.OPTIONS_DICT["usermanual"] and self.project_name != ""):
-            self.project_id = ProjectTypeID[self.project_name]
-            get_prj_name = True
-            if self.project_name not in ProjectTypeID.keys():
-                raise ValueError(f"Wrong Project Name: {self.project_name}")
+        if self.project_name not in ProjectTypeID.keys():
+            raise ValueError(f"Wrong Project Name: {self.project_name}")
 
-        if get_prj_ver and get_prj_name:
-            self.work_mode["given_project"] = True
-
-        if self.project_name.lower() == 'root':
-            self.work_mode["format"] = "html"
-
-        return 0
+        return arg_cnt
 
     def show_project_info(self):
-        print("Root Protocol Ver: " + self.root_ver + "\n"
-              + "Project Name: " + self.project_name + "\n"
+        print("Project Name: " + self.project_name + "\n"
               + "Device Type: " + self.project_id + '\n'
               + "Protocol Ver: " + self.project_ver + "\n"
               )
 
     def __init__(self):
-        self._r = 'release'
-        self._a = 'air'
-        self._rn = 'releasenote'
-        self._u = 'usermanual'
-        self._q = 'quickstart'
-        self._s = 'source'
-        self._dft = os.path.join("draft", "root")
-        self._rel_dft = os.path.join("release", "root_draft")
+        self.d_source = None
+        self.root_path = None
         self.pre_path = ""
-        self.d_source = ''
         self.work_path = ""
         self.dest_folder = ''
         self.project_name = ""
         self.project_ver = ""
         self.project_id = ""
-        self.root_ver = "0100"
-        self.root_path = ""
-        self.doc_ver = ""
-        self.root_xml = ""
-        self.project_xml = ""
-        self.latex_folder = ""
         self.r_xml = ""
         self.p_xml = ""
         self.work_mode = {
@@ -287,10 +219,10 @@ DocBuilder = DocumentBuilder()
 
 def create_dest_path(dbuilder=DocBuilder):
     dbuilder.init_path()
-    if not os.path.exists(dbuilder.d_source):
-        os.makedirs(dbuilder.d_source)
+    if not os.path.exists(dbuilder.dest_folder):
+        os.makedirs(dbuilder.dest_folder)
     else:
-        print(dbuilder.d_source + ' exist!\n')
+        print(dbuilder.dest_folder + ' exist!\n')
 
 
 def delete_folder(folder_path):
@@ -310,28 +242,18 @@ def delete_folder(folder_path):
 # python make.py <root ver>
 # python make.py <root ver> <project name> <project protocol version>
 #        argv[0] argv[1]  argv[2]    argv[3]    argv[4]
-# python make.py -RV 0100 -P GV500CG -PVer 0100 -type=air/releasenote/quickstart/usermanual -draft
+# python make.py -P GV500CG -PVer 0100 -PType=gvxxx
 #
-#        -RV        : root xml version, such as: 0100
 #        -P         : project name, GV500CG
 #        -PVer      : project xml version, 0100
 #        -PType     : project type, gvxxx or glxxx
-#        -DVer      : document version, 0100
-#        -docx      : no_extract
-#                   : extract_and_trans
-#        -format    : docx, pdf, html, all
-#        -type      : air
-#                   : releasenote
-#                   : quickstart
-#                   : usermanual
-#        -draft     : only copy draft/root to release/root_draft   (OBSOLETE)
 # ----------------------------------------------------------------------------------------------------------------------
 def main(dbuilder=DocBuilder):
     if 0 != dbuilder.args_parser(sys.argv):
         create_dest_path()
 
         if dbuilder.work_mode["doc_type"] == dc.OPTIONS_DICT["air"]:
-            dbuilder.xml_parser(dbuilder.work_mode["doc_type"])
+            dbuilder.xml_parser()
 
     else:
         raise Exception("check args failed!")
