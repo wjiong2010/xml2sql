@@ -10,6 +10,8 @@ import os
 import sys
 
 from xml_parser import xmlparse
+from database import save_as_excel
+from project import Project
 
 
 class DocConverter:
@@ -27,6 +29,7 @@ class DocConverter:
         else:
             self.prj_name = pn
             self.cust = ""
+        Project.customer = self.cust
 
         if pn.find("ROOT") != -1:
             self.prj_name = "ROOT"
@@ -241,7 +244,6 @@ def delete_folder(folder_path):
 # python make.py <root ver> <project name> <project protocol version>
 #        argv[0] argv[1]  argv[2]    argv[3]    argv[4]
 # python make.py -P GV500CG -PVer 0100 -PType=gvxxx
-#
 #        -P         : project name, GV500CG
 #        -PVer      : project xml version, 0100
 #        -PType     : project type, gvxxx or glxxx
@@ -249,10 +251,8 @@ def delete_folder(folder_path):
 def main(dbuilder=DocBuilder):
     if 0 != dbuilder.args_parser(sys.argv):
         create_dest_path()
-
-        if dbuilder.work_mode["doc_type"] == dc.OPTIONS_DICT["air"]:
-            dbuilder.xml_parser()
-
+        dbuilder.xml_parser()
+        save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
     else:
         raise Exception("check args failed!")
 

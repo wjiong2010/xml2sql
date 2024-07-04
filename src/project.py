@@ -1010,6 +1010,7 @@ class _Project:
         self.password = 'queclink'  # 默认密码
         self.device_type = 'Device Type'  # 设备类型
         self.sub_title = 'LTE Cat-1/LTE Cat-4/LTE/GNSS Tracker'  # 副标题
+        self.customer = ''
         self.Support = self._Support()
         self.AirProtocol = self._AirProtocol()
 
