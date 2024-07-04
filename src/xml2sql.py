@@ -8,7 +8,6 @@
 # ------------------------------------------------------------------------------------------------------------------------------------
 import os
 import sys
-import shutil
 
 from xml_parser import xmlparse
 
@@ -125,7 +124,7 @@ class DocumentBuilder:
 
         self.dest_folder = os.path.join(self.root_path, "excel")
 
-    def xml_parser(self, t=0):
+    def xml_parser(self):
         if len(self.r_xml) != 0:
             xmlparse(self.r_xml)
 
@@ -160,8 +159,6 @@ class DocumentBuilder:
                 case "-PVer":
                     # project protocol version
                     arg_cnt += 1
-                    # print("-PVer")
-                    get_prj_ver = True
                     self.project_ver = args_list[arg_cnt]
                 case "-PType":
                     dc.project_type_proc(arg_value)
@@ -185,6 +182,7 @@ class DocumentBuilder:
               )
 
     def __init__(self):
+        self.root_ver = '0100'
         self.d_source = None
         self.root_path = None
         self.pre_path = ""
