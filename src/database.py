@@ -42,7 +42,6 @@ class ProjectTables(Tables):
             self.waterproof = 'IPxx'
 
         cust = prj.customer
-        cust = prj.customer
         if prj.customer == '':
             cust = 'standard'
 

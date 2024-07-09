@@ -37,6 +37,22 @@ ProjectTypeID = {
 }
 
 
+TestProjects = [{'proj_name': 'gb100cg', 'proj_ver': '0201'},
+                {'proj_name': 'gv305ceu', 'proj_ver': '0502'},
+                {'proj_name': 'gv310lau', 'proj_ver': '0802'},
+                {'proj_name': 'gv350ceu', 'proj_ver': '0801'},
+                {'proj_name': 'gv355ceu', 'proj_ver': '0808'},
+                {'proj_name': 'gv500cg', 'proj_ver': '0200'},
+                {'proj_name': 'gv50ceu', 'proj_ver': '0100'},
+                {'proj_name': 'gv50cg', 'proj_ver': '0301'},
+                {'proj_name': 'gv57ceu', 'proj_ver': '0502'},
+                {'proj_name': 'gv57cg', 'proj_ver': '0402'},
+                {'proj_name': 'gv58ceu', 'proj_ver': '0502'},
+                {'proj_name': 'gv58cg', 'proj_ver': '0801'},
+                {'proj_name': 'gv58lau', 'proj_ver': '0600'},
+                {'proj_name': 'gv75lau', 'proj_ver': '0201'}]
+
+
 class DocConverter:
     def project_type_proc(self, arg_prj_type):
         self.prj_type = arg_prj_type.lower()
@@ -83,29 +99,6 @@ class DocConverter:
 
 
 dc = DocConverter()
-
-# supported projects name
-ProjectTypeID = {
-    'GV305CEU': '78',
-    'GV310LAU': '6E',
-    'GV350CEU': '74',
-    'GL33': '802002',
-    'GV58CEU': '802003',
-    'GV58CG': '802003',
-    'GV58LAU': '802004',
-    'GV355CEU': '802005',
-    'GV57CG': '802006',
-    'GB100CG': '802007',
-    'GV50CG': '802008',
-    'GV500CG': '802009',
-    'GL33CG': '80200A',
-    'GV75LAU': '80200C',
-    'GV57CEU': '80200D',
-    'GV50CME': '80200E',
-    'GV50CEU': '80200F',
-    'GES100CG': '802011',
-    'ROOT': '802000'
-}
 
 
 class DocumentBuilder:
@@ -273,12 +266,25 @@ def delete_folder(folder_path):
 #        -PType     : project type, gvxxx or glxxx
 # ----------------------------------------------------------------------------------------------------------------------
 def main(dbuilder=DocBuilder):
-    if 0 != dbuilder.args_parser(sys.argv):
-        create_dest_path()
-        dbuilder.xml_parser()
-        save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
-    else:
-        raise Exception("check args failed!")
+    # ['.\\xml2sql.py', '-P', 'GV500CG', '-PVer', '0200', '-PType=gvxxx']
+    test_prj_list = []
+    for p in TestProjects:
+        test_prj_list.append('.\\xml2sql.py')
+        test_prj_list.append('-P')
+        test_prj_list.append(p['proj_name'].upper())
+        test_prj_list.append('-PVer')
+        test_prj_list.append(p['proj_ver'])
+        test_prj_list.append('-PType=gvxxx')
+        print(test_prj_list)
+
+        # if 0 != dbuilder.args_parser(sys.argv):
+        if 0 != dbuilder.args_parser(test_prj_list):
+            create_dest_path()
+            dbuilder.xml_parser()
+            save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
+        else:
+            raise Exception("check args failed!")
+        test_prj_list.clear()
 
 
 if __name__ == '__main__':
