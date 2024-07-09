@@ -407,6 +407,8 @@ def xmlparse_f(file):
     Project.device_type = __parse_attr(root, 'device_type')
     Project.password = __parse_attr(root, 'password')
     Project.sub_title = __parse_attr(root, 'sub_title')
+    Project.qldbg = __parse_attr(root, 'qldbg')
+    Project.qble = __parse_attr(root, 'qble')
 
     for node in root.childNodes:
         if ELEMENT_NODE == node.nodeType:  # 1 is Element
