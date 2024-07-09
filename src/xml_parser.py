@@ -427,6 +427,7 @@ def valid2false():
 
 def xmlparse(file='xml\\root_802000_R0100_A0100_D0100_B0100_P.xml'):
     time.process_time()
+    valid2false()
     xmlparse_f(file)
     print('Successfully parsed the XML file. Cost {:9.9} seconds!'.format(time.process_time()))
 
