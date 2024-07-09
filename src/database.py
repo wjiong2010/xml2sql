@@ -41,7 +41,12 @@ class ProjectTables(Tables):
         else:
             self.waterproof = 'IPxx'
 
-        row = [prj.name, prj.root, str(prj.AirProtocol.ver), prj.customer, False, prj.Support.BLE.valid, prj.device_type,
+        cust = prj.customer
+        cust = prj.customer
+        if prj.customer == '':
+            cust = 'standard'
+
+        row = [prj.name, prj.root, str(prj.AirProtocol.ver), cust, False, prj.Support.BLE.valid, prj.device_type,
                prj.password, prj.sub_title, self.lte, prj.Support.S_3G.valid, prj.Support.S_2G.valid, prj.Support.BLE.valid,
                prj.Support.RS232.valid, prj.Support.RS485.valid, self.can, self.tacho, prj.Support.OBD.valid,
                prj.Support.IO.valid, prj.Support.Call.valid, prj.Support.SMS.valid, self.waterproof,

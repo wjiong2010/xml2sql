@@ -13,6 +13,29 @@ from xml_parser import xmlparse
 from database import save_as_excel
 from project import Project
 
+# supported projects name
+ProjectTypeID = {
+    'GV305CEU': '78',
+    'GV310LAU': '6E',
+    'GV350CEU': '74',
+    'GL33': '802002',
+    'GV58CEU': '802003',
+    'GV58CG': '802003',
+    'GV58LAU': '802004',
+    'GV355CEU': '802005',
+    'GV57CG': '802006',
+    'GB100CG': '802007',
+    'GV50CG': '802008',
+    'GV500CG': '802009',
+    'GL33CG': '80200A',
+    'GV75LAU': '80200C',
+    'GV57CEU': '80200D',
+    'GV50CME': '80200E',
+    'GV50CEU': '80200F',
+    'GES100CG': '802011',
+    'ROOT': '802000'
+}
+
 
 class DocConverter:
     def project_type_proc(self, arg_prj_type):
@@ -128,8 +151,8 @@ class DocumentBuilder:
         self.dest_folder = os.path.join(self.root_path, "excel")
 
     def xml_parser(self):
-        if len(self.r_xml) != 0:
-            xmlparse(self.r_xml)
+        if len(self.p_xml) != 0:
+            xmlparse(self.p_xml)
 
     # ----------------------------------------------------------------------------------------------------------------------
     # python make.py <root ver>
@@ -175,6 +198,7 @@ class DocumentBuilder:
 
         if self.project_name not in ProjectTypeID.keys():
             raise ValueError(f"Wrong Project Name: {self.project_name}")
+        self.project_id = ProjectTypeID[self.project_name]
 
         return arg_cnt
 
