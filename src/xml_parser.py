@@ -113,7 +113,7 @@ def __parse_support(node):
                 Project.Support.Format.Mask.parse(hex_str)
             elif 'PowerButton' == subNode.nodeName:
                 Project.Support.PowerButton.valid = True
-            elif 'IP67' == subNode.nodeName:
+            elif 'S_IP67' == subNode.nodeName:
                 Project.Support.IP67.valid = True
             elif 'MBattery' == subNode.nodeName:
                 tempName = subNode.getAttribute('name')
@@ -425,7 +425,7 @@ def valid2false():
     Project.AirProtocol.Commands.reset()
 
 
-def xmlparse(file='xml\\root_802000_R0100_A0100_D0100_B0100_P.xml'):
+def xmlparse(file):
     time.process_time()
     valid2false()
     xmlparse_f(file)
