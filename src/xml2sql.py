@@ -7,11 +7,12 @@
 # Description: 
 # ------------------------------------------------------------------------------------------------------------------------------------
 import os
-import sys
+# import sys
 
 from xml_parser import xmlparse
 from database import save_as_excel
 from project import Project
+from database import data_base as db
 
 # supported projects name
 ProjectTypeID = {
@@ -281,7 +282,7 @@ def main(dbuilder=DocBuilder):
         if 0 != dbuilder.args_parser(test_prj_list):
             create_dest_path()
             dbuilder.xml_parser()
-            save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
+            db.save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
         else:
             raise Exception("check args failed!")
         test_prj_list.clear()
