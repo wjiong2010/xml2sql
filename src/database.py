@@ -1,6 +1,7 @@
 import os
+import time
 import openpyxl
-import mysql
+import mysql.connector
 from excel_format import ExcelFormat
 from project import Project
 
@@ -73,16 +74,73 @@ class DataBase:
     def __init__(self):
         self.COL_A_WIDTH = 20
         self.COL_B_WIDTH = 120
+        self.db_config = {
+            "host": 'localhost',
+            "user": 'root',
+            "password": '1qaz1qaz',
+            "database": 'protocol'
+        }
         self.tables_dict = {
             "project_table": ProjectTables()
         }
 
-    def get_project_value(self, table_name, first_line, prj=Project):
+    def get_table_value(self, table_name, first_line, prj=Project):
         table = self.tables_dict[table_name]
         if first_line:
             return table.headline
         else:
             return table.get_value(prj)
+
+    def mysql_connect(self, attempts=3, delay=2):
+        attempt = 1
+        while attempt < attempts + 1:
+            try:
+                return mysql.connector.connect(**self.db_config)
+            except (mysql.connector.Error, IOError) as err:
+                if attempt == attempts:
+                    print("Failed to connect to MySQL")
+                    return None
+                time.sleep(attempt ** delay)
+                attempt += 1
+
+        return None
+
+    def mysql_insert(self, cursor, table):
+        columns = self.get_table_value(table, True)
+        values = self.get_table_value(table, False)
+        print(columns, values)
+        c = ''
+        cv = '('
+        for cs in columns:
+            cv += cs
+            cv += ','
+            c += '%s,'
+        c = c[:-1]
+        cv = cv[:-1] + ')'
+        print("---1---")
+        print(cv)
+        add_columns = ("INSERT INTO {} ".format(table) + cv + " VALUES ({})".format(c))
+        print(add_columns)
+        print("---2---")
+        print(tuple(values))
+        cursor.execute(add_columns, tuple(values))
+
+    def mysql_proc(self, table_name):
+        print(f"table: {table_name}")
+        conn = self.mysql_connect()
+        if conn and conn.is_connected():
+            print("Connected to MySQL")
+            with conn.cursor() as cursor:
+                print("get cursor")
+                self.mysql_insert(cursor, table_name)
+                conn.commit()
+                # cursor.execute(f"SELECT * FROM {table_name}")
+                # rows = cursor.fetchall()
+                # for row in rows:
+                #     print(row)
+            conn.close()
+        else:
+            print("Failed to connect to MySQL")
 
     def save_as_excel(self, dest_path, file_name, sheet_name):
         excel_full_path = str(os.path.join(dest_path, file_name))
@@ -112,9 +170,9 @@ class DataBase:
 
         # 使用append方法，将行数据按行追加写入
         if max_row_num == 1:
-            values = self.get_project_value(sheet_name, True)
+            values = self.get_table_value(sheet_name, True)
             ws.append(values)
-        values = self.get_project_value(sheet_name, False)
+        values = self.get_table_value(sheet_name, False)
         ws.append(values)
 
         # xl_format.set_column(ws_app, 'A', self.COL_A_WIDTH)
