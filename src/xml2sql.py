@@ -7,7 +7,7 @@
 # Description: 
 # ------------------------------------------------------------------------------------------------------------------------------------
 import os
-# import sys
+import sys
 
 from xml_parser import xmlparse
 # from database import save_as_excel
@@ -268,25 +268,29 @@ def delete_folder(folder_path):
 # ----------------------------------------------------------------------------------------------------------------------
 def main(dbuilder=DocBuilder):
     # ['.\\xml2sql.py', '-P', 'GV500CG', '-PVer', '0200', '-PType=gvxxx']
-    test_prj_list = []
-    for p in TestProjects:
-        test_prj_list.append('.\\xml2sql.py')
-        test_prj_list.append('-P')
-        test_prj_list.append(p['proj_name'].upper())
-        test_prj_list.append('-PVer')
-        test_prj_list.append(p['proj_ver'])
-        test_prj_list.append('-PType=gvxxx')
-        print(test_prj_list)
-
-        # if 0 != dbuilder.args_parser(sys.argv):
-        if 0 != dbuilder.args_parser(test_prj_list):
-            create_dest_path()
-            dbuilder.xml_parser()
-            # db.save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
-            db.mysql_proc("project_table")
-        else:
-            raise Exception("check args failed!")
-        test_prj_list.clear()
+    print(sys.argv)
+    if len(sys.argv) == 2:
+        if sys.argv[1] == "-unit":
+            db.mysql_proc("parameter_unit_table")
+    # else:
+    #     test_prj_list = []
+    #     for p in TestProjects:
+    #         test_prj_list.append('.\\xml2sql.py')
+    #         test_prj_list.append('-P')
+    #         test_prj_list.append(p['proj_name'].upper())
+    #         test_prj_list.append('-PVer')
+    #         test_prj_list.append(p['proj_ver'])
+    #         test_prj_list.append('-PType=gvxxx')
+    #         print(test_prj_list)
+    #
+    #         if 0 != dbuilder.args_parser(test_prj_list):
+    #             create_dest_path()
+    #             dbuilder.xml_parser()
+    #             # db.save_as_excel(dbuilder.dest_folder, "tables.xlsx", "project_table")
+    #             db.mysql_proc("project_table")
+    #         else:
+    #             raise Exception("check args failed!")
+    #         test_prj_list.clear()
 
 
 if __name__ == '__main__':
