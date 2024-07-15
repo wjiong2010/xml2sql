@@ -2,8 +2,11 @@ import os
 import time
 import openpyxl
 import mysql.connector
+from mysql.connector import errorcode
 from excel_format import ExcelFormat
 from project import Project
+
+# from sql import SQLCommand as sqlc
 
 xl_format = ExcelFormat()
 
@@ -14,8 +17,26 @@ class Tables:
         self.headline = []
 
 
-class ProjectTables(Tables):
+class ParameterUnitTable(Tables):
+    def get_value(self, prj=None):
+        return self.column_values
+
+    def __init__(self):
+        super().__init__()
+        self.name = "parameter_unit_table"
+        self.headline = ['unit']
+        self.column_values = ['μm', 'mm', 'cm', 'm', 'km', 'μg', 'mg', 'g', 'kg', 't', 'mL', 'L', 'Pa', 'kPa', 'KB', 'MB',
+                              'Mb', 'ms', 's', 'min', 'h', 'd', 'year', 'μV', 'mV', 'V', 'μA', 'mA', 'A', 'Hz', 'MHz',
+                              'rh', '℃']
+
+
+class ProjectTable(Tables):
     def get_value(self, prj):
+        """
+        get project items value from prj
+        :param prj:
+        :return: a list include each items value
+        """
 
         if Project.Support.LTE.cat1:
             self.lte = Project.Support.LTE.cat1_name
@@ -74,6 +95,7 @@ class DataBase:
     def __init__(self):
         self.COL_A_WIDTH = 20
         self.COL_B_WIDTH = 120
+        self.DATABASE = "protocol_database"
         self.db_config = {
             "host": 'localhost',
             "user": 'root',
@@ -81,7 +103,8 @@ class DataBase:
             "database": 'protocol'
         }
         self.tables_dict = {
-            "project_table": ProjectTables()
+            "project_table": ProjectTable(),
+            "parameter_unit_table": ParameterUnitTable(),
         }
 
     def get_table_value(self, table_name, first_line, prj=Project):
@@ -105,6 +128,41 @@ class DataBase:
 
         return None
 
+    def mysql_create_database(self, cursor):
+        """
+        create database if not exists
+        :return: 1 success, 0 fail
+        """
+        sqlc_creat_database = "{} {} {}".format("CREATE DATABASE", self.DATABASE, "DEFAULT CHARACTER SET \'utf8\'")
+        try:
+            cursor.execute(sqlc_creat_database)
+
+        except mysql.connector.Error as err:
+            print("Failed creating database: {}".format(err))
+            return 0
+        try:
+            sqlc_use_database = "USE {}".format(self.DATABASE)
+            cursor.execute(sqlc_use_database)
+        except mysql.connector.Error as err:
+            print("Database {} does not exists.".format(self.DATABASE))
+            if err.errno == errorcode.ER_BAD_DB_ERROR:
+                self.mysql_create_database(cursor)
+                print("Database {} created successfully.".format(self.DATABASE))
+                # cnx.database = self.DATABASE
+            else:
+                print(err)
+                return 0
+
+        return 1
+
+    def mysql_create_table(self, cursor, table):
+        """
+        If table does not exist, create table
+        :param cursor:
+        :param table: table name
+        :return: 1 success, 0 fail
+        """
+
     def mysql_insert(self, cursor, table):
         columns = self.get_table_value(table, True)
         values = self.get_table_value(table, False)
@@ -115,7 +173,9 @@ class DataBase:
             cv += cs
             cv += ','
             c += '%s,'
+        # discard the last ','
         columns_value = c[:-1]
+        # discard the last ',' and append a ')'
         columns_name = cv[:-1] + ')'
         print("---1---")
         print(cv)
@@ -132,6 +192,8 @@ class DataBase:
             print("Connected to MySQL")
             with conn.cursor() as cursor:
                 print("get cursor")
+                # self.mysql_create_database(cursor)
+                # self.mysql_create_table(cursor, table_name)
                 self.mysql_insert(cursor, table_name)
                 conn.commit()
                 # cursor.execute(f"SELECT * FROM {table_name}")
@@ -183,6 +245,3 @@ class DataBase:
 
 
 data_base = DataBase()
-
-
-
