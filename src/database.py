@@ -115,11 +115,11 @@ class DataBase:
             cv += cs
             cv += ','
             c += '%s,'
-        c = c[:-1]
-        cv = cv[:-1] + ')'
+        columns_value = c[:-1]
+        columns_name = cv[:-1] + ')'
         print("---1---")
         print(cv)
-        add_columns = ("INSERT INTO {} ".format(table) + cv + " VALUES ({})".format(c))
+        add_columns = ("{} {} ".format("INSERT INTO", table) + columns_name + " VALUES ({})".format(columns_value))
         print(add_columns)
         print("---2---")
         print(tuple(values))
