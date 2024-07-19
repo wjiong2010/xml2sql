@@ -167,23 +167,30 @@ class DataBase:
         columns = self.get_table_value(table, True)
         values = self.get_table_value(table, False)
         print(columns, values)
-        c = ''
-        cv = '('
+        fmt = ''
+        cols = '('
         for cs in columns:
-            cv += cs
-            cv += ','
-            c += '%s,'
+            cols += cs
+            cols += ','
+            fmt += '%s,'
         # discard the last ','
-        columns_value = c[:-1]
+        columns_value = fmt[:-1]
         # discard the last ',' and append a ')'
-        columns_name = cv[:-1] + ')'
-        print("---1---")
-        print(cv)
+        columns_name = cols[:-1] + ')'
+        print(f"columns_name:{columns_name}-columns_value:{columns_value}-")
+        print(cols)
         add_columns = ("{} {} ".format("INSERT INTO", table) + columns_name + " VALUES ({})".format(columns_value))
         print(add_columns)
-        print("---2---")
-        print(tuple(values))
-        cursor.execute(add_columns, tuple(values))
+        print("---2---{}, {}".format(len(values), len(columns)))
+        if len(values) == len(columns):
+            print(tuple(values))
+            cursor.execute(add_columns, tuple(values))
+        else:
+            l = []
+            for v in values:
+                l.append(v)
+                cursor.execute(add_columns, l)
+                l.clear()
 
     def mysql_proc(self, table_name):
         print(f"table: {table_name}")
