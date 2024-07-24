@@ -24,6 +24,8 @@ CAN_INFO = 7,
 UPDATE = 8,
 CONNECTIVE = 9
 
+SEPARATE_FLAG = ' | '
+
 message_type_tuple = ('posi', 'dinf', 'rtrp', 'event', 'data', 'crash', 'cinf', 'updr', 'conr')
 
 
@@ -132,6 +134,14 @@ def is_hex_digit(s):
         return False
 
 
+# convert digital to string
+def digi_2_str(n, is_hex):
+    if is_hex:
+        return str(hex(n))[2:].upper()  # discard '0x'
+    else:
+        return str(n)
+
+
 # parameter attribute: <name>, <Range>, <Default>, <Len>, <Item>, <Left>, <Right>, <LeftRight>
 class _Param:
     class _Range:
@@ -143,11 +153,89 @@ class _Param:
         def add_leftright(self, value):
             self.LeftRight.append(value)
 
+        def get_leftright(self):
+            out_str = ''
+            if len(self.LeftRight) == 0:
+                return out_str
+
+            for lr in self.LeftRight:
+                if lr.l == lr.r:
+                    out_str += str(lr.l)
+                else:
+                    out_str += "{}-{}".format(lr.l, lr.r)
+                out_str += '|'
+
+            if out_str[-1] == '|':
+                return out_str[:-1]
+            else:
+                return out_str
+
         def clear_leftright(self):
             self.LeftRight.clear()
 
         def add_item(self, value):
             self.items_list.append(value)
+
+        def get_items_str(self):
+            ret_str = ''
+            tl = []
+            print("items_list: {0}, {1}".format(self.items_list, self.rng_type))
+
+            if len(self.items_list) == 0:
+                return ret_str
+
+            if self.rng_type == "special_str":
+                for it in self.items_list:
+                    ret_str += str(it)
+                    ret_str += SEPARATE_FLAG
+            else:
+                if self.rng_type == "hexNumber":
+                    is_hex = True
+                else:
+                    is_hex = False
+                for it in self.items_list:
+                    if is_hex:
+                        v = int(it, 16)
+                    else:
+                        v = int(it)
+                    if len(tl) == 0:
+                        tl.append(v)
+                    else:
+                        if v - tl[-1] == 1:
+                            tl.append(v)
+                            continue
+                        else:
+                            if len(tl) >= 3:
+                                ret_str += digi_2_str(tl[0], is_hex)
+                                ret_str += '-'
+                                ret_str += digi_2_str(tl[-1], is_hex)
+                                ret_str += SEPARATE_FLAG
+                            else:
+                                for t in tl:
+                                    ret_str += digi_2_str(t, is_hex)
+                                    ret_str += SEPARATE_FLAG
+                            tl.clear()
+                            tl.append(v)
+                if len(tl) >= 3:
+                    ret_str += digi_2_str(tl[0], is_hex)
+                    ret_str += '-'
+                    ret_str += digi_2_str(tl[-1], is_hex)
+                else:
+                    for t in tl:
+                        ret_str += digi_2_str(t, is_hex)
+                        ret_str += SEPARATE_FLAG
+
+            # discard the last '|' if it is existing.
+            c = SEPARATE_FLAG.strip()
+            ret_str = ret_str.strip()
+            if ret_str.endswith(c):
+                ret_str = ret_str[:-1]
+            if ret_str.startswith(c):
+                ret_str = ret_str[1:]
+
+            print(f"return_str: {ret_str}")
+
+            return ret_str
 
         def leftright_value_compare(self, vid, lr, flag, iv_s):
             # print(f"value_compare,id: {vid}, lr: {lr}, flag: {flag}, value: {iv_s}")
@@ -271,6 +359,7 @@ class _Param:
             self.ItemCnt = 0
             self.rng_type = ''
             self.filter_mask = _Mask()
+            self.description = ''
 
     def get_random_value(self, hex_format, fix_len=0, float_number=False):
         if not self.valid:
@@ -797,6 +886,7 @@ class _Project:
             def reset(self):
                 self.valid = False
                 self.cmd_count = 0
+                self.param_list.clear()
                 ms = vars(self)
                 for k in ms.keys():
                     # command name must consist of three capital letters.
@@ -807,6 +897,8 @@ class _Project:
             def __init__(self):
                 self.valid = False
                 self.cmd_count = 0
+                self.param_list = []
+                self.description_list = []
                 self.BSI = CMDc()
                 self.SRI = CMDc()
                 self.QSS = CMDc()
