@@ -158,6 +158,8 @@ def __parse_air_protocol_param(node, Px):
         Px.name = temp_name
         print("----------{0}---------\r\n".format(Px.name))
     if Px.name.upper() != "RESERVED":
+        desc = ''
+        value_format = 0
         for sub in node.childNodes:
             # print(sub.nodeName + '\n')
             if 'Len' == sub.nodeName:
@@ -180,6 +182,7 @@ def __parse_air_protocol_param(node, Px):
                 Px.Range.Items = ''
                 Px.Range.ItemCnt = 0
                 t_lr = Px.Range._LeftRight()
+
                 for sub2 in sub.childNodes:
                     # print("sub2 in sub.childNodes" + sub2.nodeName + '\n')
                     if 'Item' == sub2.nodeName:
@@ -195,20 +198,29 @@ def __parse_air_protocol_param(node, Px):
                             Px.Range.Item[hex_int_v].name = name
                             Px.Range.Item[hex_int_v].valid = True
                             vv = hex_int_v
+                            value_format = 1
+                            if len(name) != 0:
+                                desc += "{:x}:{}".format(hex_int_v, name)
                         elif value.isdigit():
-                            # print("digital value: ")
+                            # print("digital value: {}".format(value))
                             if int(value) not in Px.Range.Item:
                                 Px.Range.Item[int(value)] = prj.IDc()
                             Px.Range.Item[int(value)].name = name
                             Px.Range.Item[int(value)].valid = True
                             vv = int(value)
+                            value_format = 2
+                            Px.Range.rng_type = "digital_deci"  # decimal
+                            if len(name) != 0:
+                                desc += "|{}:{}".format(vv, name)
                         else:
-                            # print("not digital value: {0}".format(value))
+                            print("not digital value: {} {}".format(name, value))
                             if value not in Px.Range.Item:
                                 Px.Range.Item[value] = prj.IDc()
                             Px.Range.Item[value].name = name
                             Px.Range.Item[value].valid = True
                             vv = value
+                            value_format = 0
+                            Px.Range.rng_type = "special_str"
 
                         if len(model) != 0:
                             Px.Range.Item[vv].model_list = model.split(',')
@@ -217,14 +229,21 @@ def __parse_air_protocol_param(node, Px):
                         Px.Range.Items += value + ', '
                         Px.Range.add_item(value)
                         Px.Range.ItemCnt += 1
-                        print("cnt:{0}, items_list:{1}, items:{2}".format(Px.Range.ItemCnt, str(Px.Range.items_list),
-                                                                          Px.Range.Items))
+                        # print("cnt:{0}, items_list:{1}, items:{2}".format(Px.Range.ItemCnt, str(Px.Range.items_list),
+                        #                                                   Px.Range.Items))
                     if 'Left' == sub2.nodeName:
                         t_lr.l = sub2.firstChild.nodeValue
                     if 'Right' == sub2.nodeName:
                         t_lr.r = sub2.firstChild.nodeValue
                         Px.Range.add_leftright(t_lr)
                         # print("left: {0}, right: {1}".format(t_lr.l, t_lr.r))
+
+        lr_str = Px.Range.get_leftright()
+        items_str = Px.Range.get_items_str()
+        print("para_name:<{}> L:{} D:{} F:{}, lr:{}, items:{}, desc:{}".format(Px.name, Px.Len, Px.Default, Px.Range.filter_mask.value, lr_str, items_str, desc))
+
+        p_list = [Px.name, Px.Len, items_str, lr_str, Px.Default, value_format, Px.Range.filter_mask.value, '', '', 1]
+        Project.AirProtocol.Commands.param_list.append(p_list)
 
         Px.valid = True
 
