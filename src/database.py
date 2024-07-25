@@ -5,8 +5,7 @@ import mysql.connector
 from mysql.connector import errorcode
 from excel_format import ExcelFormat
 from project import Project
-
-# from sql import SQLCommand as sqlc
+from sql import sql_statement as sql_stt
 
 xl_format = ExcelFormat()
 
@@ -17,6 +16,19 @@ class Tables:
         self.headline = []
 
 
+class ParameterTable(Tables):
+    def get_value(self, prj=None) -> object:
+        print(self.name)
+        return sql_stt.get_unique_parameter_list()
+
+    def __init__(self):
+        super().__init__()
+        self.name = "parameter_table"
+        self.headline = ['name', 'length', 'range_format_items', 'range_format_left_right', 'default_value',
+                         'value_format', 'filter', 'description_id', 'unit_id', 'doc_enable']
+        self.column_values = []
+
+
 class ParameterUnitTable(Tables):
     def get_value(self, prj=None):
         return self.column_values
@@ -25,7 +37,8 @@ class ParameterUnitTable(Tables):
         super().__init__()
         self.name = "parameter_unit_table"
         self.headline = ['unit']
-        self.column_values = ['μm', 'mm', 'cm', 'm', 'km', 'μg', 'mg', 'g', 'kg', 't', 'mL', 'L', 'Pa', 'kPa', 'KB', 'MB',
+        self.column_values = ['μm', 'mm', 'cm', 'm', 'km', 'μg', 'mg', 'g', 'kg', 't', 'mL', 'L', 'Pa', 'kPa', 'KB',
+                              'MB',
                               'Mb', 'ms', 's', 'min', 'h', 'd', 'year', 'μV', 'mV', 'V', 'μA', 'mA', 'A', 'Hz', 'MHz',
                               'rh', '℃']
 
@@ -104,7 +117,8 @@ class DataBase:
         }
         self.tables_dict = {
             "project_table": ProjectTable(),
-            "parameter_unit_table": ParameterUnitTable(),
+            "parameter_table": ParameterTable(),
+            "parameter_unit_table": ParameterUnitTable()
         }
 
     def get_table_value(self, table_name, first_line, prj=Project):
@@ -177,7 +191,7 @@ class DataBase:
         columns_value = fmt[:-1]
         # discard the last ',' and append a ')'
         columns_name = cols[:-1] + ')'
-        print(f"columns_name:{columns_name}-columns_value:{columns_value}-")
+        print(f"columns_name:{columns_name}  columns_value:{columns_value}")
         print(cols)
         add_columns = ("{} {} ".format("INSERT INTO", table) + columns_name + " VALUES ({})".format(columns_value))
         print(add_columns)
@@ -187,10 +201,16 @@ class DataBase:
             cursor.execute(add_columns, tuple(values))
         else:
             l = []
+            c = 1
             for v in values:
-                l.append(v)
+                if isinstance(v, list):
+                    l = v
+                else:
+                    l.append(v)
+                print('---3--- ' + str(c) + ': ' + str(l))
                 cursor.execute(add_columns, l)
                 l.clear()
+                c += 1
 
     def mysql_proc(self, table_name):
         print(f"table: {table_name}")

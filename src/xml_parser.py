@@ -11,6 +11,7 @@ from xml.dom import DOMException
 from regex import RegularExpression
 from project import Project
 import time
+from sql import sql_statement as sql_stt
 
 ELEMENT_NODE = 1  # 1 is Element
 
@@ -242,8 +243,8 @@ def __parse_air_protocol_param(node, Px):
         items_str = Px.Range.get_items_str()
         print("para_name:<{}> L:{} D:{} F:{}, lr:{}, items:{}, desc:{}".format(Px.name, Px.Len, Px.Default, Px.Range.filter_mask.value, lr_str, items_str, desc))
 
-        p_list = [Px.name, Px.Len, items_str, lr_str, Px.Default, value_format, Px.Range.filter_mask.value, '', '', 1]
-        Project.AirProtocol.Commands.param_list.append(p_list)
+        p_list = [Px.name, Px.Len, items_str.strip(), lr_str, Px.Default, value_format, Px.Range.filter_mask.value, 0, 0, 1]
+        sql_stt.parameter_list.append(p_list)
 
         Px.valid = True
 
