@@ -110,10 +110,10 @@
         <P9 name="Heartbeat Interval">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>2</Left>
             <Right>360</Right>
           </Range>
@@ -223,10 +223,10 @@
         <P12 name="Heartbeat Interval">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>2</Left>
             <Right>360</Right>
           </Range>
@@ -275,10 +275,10 @@
         <P2 name="Keep Alive">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>1080</Right>
           </Range>
@@ -357,12 +357,12 @@
           </Range>
         </P3>
         <P4 name="Operator List">
-          <Len>&lt;=6*100</Len>
+          <Len>&lt;=6x100</Len>
         </P4>
         <P5 name="TCP Connection Timeout">
           <Default>60</Default>
           <Len>2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>30</Left>
             <Right>90</Right>
           </Range>
@@ -471,10 +471,10 @@
         <P6 name="Heartbeat Interval">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>2</Left>
             <Right>360</Right>
           </Range>
@@ -606,7 +606,7 @@
         <P4 name="ODO Initial Mileage">
           <Default>0.0</Default>
           <Len>&lt;=9</Len>
-          <Range unit="Km">
+          <Range unit="km">
             <Left>0.0</Left>
             <Right>4294967.0</Right>
           </Range>
@@ -678,7 +678,7 @@
         <P14 name="Device Information Interval">
           <Default>300</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>30</Left>
             <Right>86400</Right>
           </Range>
@@ -726,7 +726,7 @@
         <P20 name="GNSS Lost Time">
           <Default>0</Default>
           <Len>2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>30</Right>
           </Range>
@@ -756,7 +756,7 @@
         <P2 name="Ignition Frequency">
           <Default>60</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>10</Left>
             <Right>120</Right>
           </Range>
@@ -799,10 +799,10 @@
         <P9 name="No Network Interval">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>1440</Right>
           </Range>
@@ -810,10 +810,10 @@
         <P10 name="No Activation Interval">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>1440</Right>
           </Range>
@@ -821,10 +821,10 @@
         <P11 name="Send Failure Timeout">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Item>0</Item>
           </Range>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>1440</Right>
           </Range>
@@ -872,7 +872,7 @@
         <P4 name="Motion Cumulative Time">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>10</Left>
             <Right>100</Right>
           </Range>
@@ -880,7 +880,7 @@
         <P5 name="Motionless Cumulative Time">
           <Default>60</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>10</Left>
             <Right>250</Right>
           </Range>
@@ -888,7 +888,7 @@
         <P6 name="GNSS Fix Failure Timeout">
           <Default>60</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>1800</Right>
           </Range>
@@ -1123,7 +1123,7 @@
         <P12 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -1293,7 +1293,7 @@
           </Range>
         </P3>
         <P4 name="Phone Number List">
-          <Len>&lt;=20*10</Len>
+          <Len>&lt;=20x10</Len>
         </P4>
         <P5 name="Reserved">
           <Len>0</Len>
@@ -1312,7 +1312,7 @@
         <P1 name="Rest Validity">
           <Default>30</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>255</Right>
           </Range>
@@ -1320,7 +1320,7 @@
         <P2 name="Movement Validity">
           <Default>60</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>255</Right>
           </Range>
@@ -1355,7 +1355,7 @@
         <P3 name="Ignition On Debounce">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="x2 seconds">
+          <Range unit="x2 s">
             <Left>5</Left>
             <Right>255</Right>
           </Range>
@@ -1371,7 +1371,7 @@
         <P5 name="Ignition Off Debounce">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="x2 seconds">
+          <Range unit="x2 s">
             <Left>5</Left>
             <Right>255</Right>
           </Range>
@@ -1479,7 +1479,7 @@
         <P4 name="Debounce Time">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>86400</Right>
           </Range>
@@ -1615,7 +1615,7 @@
         <P6 name="Discoverable Time">
           <Default>0</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>1440</Right>
           </Range>
@@ -1679,7 +1679,7 @@
         <P20 name="Scan Interval">
           <Default>400</Default>
           <Len>&lt;=5</Len>
-          <Range unit="×0.625ms">
+          <Range unit="x0.625ms">
             <Left>4</Left>
             <Right>65535</Right>
           </Range>
@@ -1687,7 +1687,7 @@
         <P21 name="Scan Window">
           <Default>240</Default>
           <Len>&lt;=5</Len>
-          <Range unit="×0.625ms">
+          <Range unit="x0.625ms">
             <Left>4</Left>
             <Right>65535</Right>
           </Range>
@@ -1754,7 +1754,7 @@
         <P7 name="Read Interval">
           <Default>30</Default>
           <Len>&lt;=5</Len>
-          <Range unit="Sec">
+          <Range unit="s">
             <Left>10</Left>
             <Right>86400</Right>
           </Range>
@@ -1819,7 +1819,7 @@
         <P18 name="Validity">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -1861,7 +1861,7 @@
         <P28 name="Temperature Validity">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -1903,7 +1903,7 @@
         <P33 name="Humidity Validity">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -1919,10 +1919,10 @@
         <P35 name="IGN Send Interval">
           <Default>30</Default>
           <Len>&lt;=5</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>10</Left>
             <Right>86400</Right>
           </Range>
@@ -1930,10 +1930,10 @@
         <P36 name="IGF Send Interval">
           <Default>60</Default>
           <Len>&lt;=5</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>10</Left>
             <Right>86400</Right>
           </Range>
@@ -2042,7 +2042,7 @@
         <P55 name="Alarm Send Interval">
           <Default>60</Default>
           <Len>&lt;=5</Len>
-          <Range unit="Sec">
+          <Range unit="s">
             <Left>0</Left>
             <Right>86400</Right>
           </Range>
@@ -2050,7 +2050,7 @@
         <P56 name="Available Validity Time">
           <Default>60</Default>
           <Len>&lt;=5</Len>
-          <Range unit="Sec">
+          <Range unit="s">
             <Left>60</Left>
             <Right>86400</Right>
           </Range>
@@ -2108,7 +2108,7 @@
         <P65 name="Temperature Validity">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -2116,7 +2116,7 @@
         <P66 name="Temperature Send Interval">
           <Default>300</Default>
           <Len>&lt;=5</Len>
-          <Range unit="sec">
+          <Range unit="s">
             <Left>30</Left>
             <Right>43200</Right>
           </Range>
@@ -2147,7 +2147,7 @@
         <P70 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="(×100ms)">
+          <Range unit="(x100ms)">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2230,7 +2230,7 @@
           </Range>
         </P8>
         <P9 name="MAC List">
-          <Len>&lt;=12*75</Len>
+          <Len>&lt;=12x75</Len>
         </P9>
         <P10 name="Push Button Event">
           <Default>0</Default>
@@ -2252,7 +2252,7 @@
         <P12 name="Keyfob Detection Interval">
           <Default>30</Default>
           <Len>&lt;=3</Len>
-          <Range unit="Sec">
+          <Range unit="s">
             <Left>30</Left>
             <Right>600</Right>
           </Range>
@@ -2308,7 +2308,7 @@
         <P27 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="(×100ms)">
+          <Range unit="(x100ms)">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2371,7 +2371,7 @@
         <P6 name="Min Threshold">
           <Default>8000</Default>
           <Len>&lt;=5</Len>
-          <Range unit="mv">
+          <Range unit="mV">
             <Left>8000</Left>
             <Right>32000</Right>
           </Range>
@@ -2379,7 +2379,7 @@
         <P7 name="Max Threshold">
           <Default>32000</Default>
           <Len>&lt;=5</Len>
-          <Range unit="mv">
+          <Range unit="mV">
             <Left>8000</Left>
             <Right>32000</Right>
           </Range>
@@ -2445,7 +2445,7 @@
         <P7 name="Check Interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>86400</Right>
           </Range>
@@ -2453,7 +2453,7 @@
         <P8 name="Send Interval">
           <Default>30</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>86400</Right>
           </Range>
@@ -2488,10 +2488,10 @@
         <P13 name="IGF Report Interval">
           <Default>600</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -2553,7 +2553,7 @@
         <P4 name="FRI IGN Report Interval">
           <Default>30</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -2577,10 +2577,10 @@
         <P7 name="FRI IGF Report Interval">
           <Default>300</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -2588,7 +2588,7 @@
         <P8 name="FRI IGN Check interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>86400</Right>
           </Range>
@@ -2616,7 +2616,7 @@
         <P2 name="Threshold_X">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×0.1g">
+          <Range unit="x0.1g">
             <Left>0</Left>
             <Right>160</Right>
           </Range>
@@ -2624,7 +2624,7 @@
         <P3 name="Threshold_Y">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×0.1g">
+          <Range unit="x0.1g">
             <Left>0</Left>
             <Right>160</Right>
           </Range>
@@ -2632,7 +2632,7 @@
         <P4 name="Threshold_Z">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×0.1g">
+          <Range unit="x0.1g">
             <Left>0</Left>
             <Right>160</Right>
           </Range>
@@ -2684,7 +2684,7 @@
         <P10 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2747,7 +2747,7 @@
         <P6 name="Duration1">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2778,7 +2778,7 @@
         <P11 name="Duration2">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2809,7 +2809,7 @@
         <P16 name="Duration3">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2840,7 +2840,7 @@
         <P21 name="Duration4">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -2986,10 +2986,10 @@
         <P6 name="Check Interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -3017,7 +3017,7 @@
         <P9 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3112,10 +3112,10 @@
         <P25 name="Check Interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -3143,7 +3143,7 @@
         <P28 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3297,7 +3297,7 @@
         <P18 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3321,7 +3321,7 @@
         <P21 name="Cornering Duration">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="*10ms">
+          <Range unit="x10ms">
             <Left>10</Left>
             <Right>250</Right>
           </Range>
@@ -3337,7 +3337,7 @@
         <P23 name="Acceleration Duration">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="*10ms">
+          <Range unit="x10ms">
             <Left>10</Left>
             <Right>250</Right>
           </Range>
@@ -3359,7 +3359,7 @@
         <P27 name="Brake Duration">
           <Default>50</Default>
           <Len>&lt;=3</Len>
-          <Range unit="*10ms">
+          <Range unit="x10ms">
             <Left>10</Left>
             <Right>250</Right>
           </Range>
@@ -3385,7 +3385,7 @@
         <P2 name="Time to Idling">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>1</Left>
             <Right>30</Right>
           </Range>
@@ -3393,7 +3393,7 @@
         <P3 name="Time to Movement">
           <Default>1</Default>
           <Len>1</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>1</Left>
             <Right>5</Right>
           </Range>
@@ -3441,7 +3441,7 @@
         <P10 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3483,7 +3483,7 @@
         <P3 name="Siren On Timer (T1)">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>1</Left>
             <Right>600</Right>
           </Range>
@@ -3491,7 +3491,7 @@
         <P4 name="Siren Off Timer (T2)">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>1</Left>
             <Right>600</Right>
           </Range>
@@ -3499,7 +3499,7 @@
         <P5 name="Ready Fuel Release Timer (T3)">
           <Default>1800</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>65535</Right>
           </Range>
@@ -3539,7 +3539,7 @@
         <P10 name="GNSS Fix Failure Timer (T4)">
           <Default>5</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>1</Left>
             <Right>100</Right>
           </Range>
@@ -3555,7 +3555,7 @@
         <P12 name="Release Fuel Cut-off Timer (T5)">
           <Default>0</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>1000</Right>
           </Range>
@@ -3571,7 +3571,7 @@
         <P14 name="Waiting Release Fuel Timer (T6)">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>65535</Right>
           </Range>
@@ -3625,7 +3625,7 @@
         <P7 name="Enter Jamming Duration">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -3633,7 +3633,7 @@
         <P8 name="Exit Jamming Duration">
           <Default>10</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -3661,7 +3661,7 @@
         <P11 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="*100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3716,7 +3716,7 @@
           </Range>
         </P7>
         <P8 name="Home Operator List">
-          <Len>&lt;=6*10</Len>
+          <Len>&lt;=6x10</Len>
         </P8>
         <P9 name="Reserved">
           <Len>0</Len>
@@ -3741,7 +3741,7 @@
           </Range>
         </P12>
         <P13 name="Roaming Operator List">
-          <Len>&lt;=6*100</Len>
+          <Len>&lt;=6x100</Len>
         </P13>
         <P14 name="Reserved">
           <Len>0</Len>
@@ -3766,7 +3766,7 @@
           </Range>
         </P17>
         <P18 name="Blocklist Operator">
-          <Len>&lt;=6*20</Len>
+          <Len>&lt;=6x20</Len>
         </P18>
         <P19 name="Reserved">
           <Len>0</Len>
@@ -3831,7 +3831,7 @@
         <P31 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3893,7 +3893,7 @@
         <P7 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -3967,7 +3967,7 @@
         <P6 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -4023,7 +4023,7 @@
         <P4 name="Validity">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -4059,7 +4059,7 @@
         <P10 name="Validity">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -4095,7 +4095,7 @@
         <P16 name="Validity">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -4131,7 +4131,7 @@
         <P22 name="Validity">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -4203,7 +4203,7 @@
         <P4 name="Validity">
           <Default>60</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>3600</Right>
           </Range>
@@ -4211,7 +4211,7 @@
         <P5 name="Send Interval">
           <Default>300</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>30</Left>
             <Right>3600</Right>
           </Range>
@@ -4239,7 +4239,7 @@
         <P8 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -4303,7 +4303,7 @@
         <P2 name="Time to Stop">
           <Default>2</Default>
           <Len>&lt;=4</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>30</Right>
           </Range>
@@ -4311,7 +4311,7 @@
         <P3 name="Time to Start">
           <Default>1</Default>
           <Len>&lt;=3</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>5</Right>
           </Range>
@@ -4327,7 +4327,7 @@
         <P5 name="Long Stop">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="minute">
+          <Range unit="min">
             <Left>0</Left>
             <Right>43200</Right>
           </Range>
@@ -4336,8 +4336,8 @@
           <Default>0</Default>
           <Len>1</Len>
           <Range unit="">
-            <Item name="Minute">0</Item>
-            <Item name="Second">1</Item>
+            <Item name="min">0</Item>
+            <Item name="s">1</Item>
           </Range>
         </P6>
         <P7 name="Fast STP Mode">
@@ -4364,7 +4364,7 @@
         <P2 name="Engine Off to Tow">
           <Default>10</Default>
           <Len>&lt;=2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>15</Right>
           </Range>
@@ -4372,7 +4372,7 @@
         <P3 name="Fake Tow Delay">
           <Default>1</Default>
           <Len>&lt;=2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>0</Left>
             <Right>10</Right>
           </Range>
@@ -4380,7 +4380,7 @@
         <P4 name="Interval">
           <Default>300</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>30</Left>
             <Right>86400</Right>
           </Range>
@@ -4408,7 +4408,7 @@
         <P7 name="Output Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -4424,7 +4424,7 @@
         <P9 name="Rest Duration">
           <Default>2</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×15sec">
+          <Range unit="x15s">
             <Left>1</Left>
             <Right>255</Right>
           </Range>
@@ -4432,7 +4432,7 @@
         <P10 name="Motion Duration">
           <Default>3</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -4518,10 +4518,10 @@
         <P5 name="Sample Rate">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4552,7 +4552,7 @@
         <P9 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -4584,7 +4584,7 @@
         <P13 name="Fuel Sensor Delay Time">
           <Default>30</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>600</Right>
           </Range>
@@ -4616,7 +4616,7 @@
         <P17 name="Voltage Margin Error">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×10mv">
+          <Range unit="x10mV">
             <Left>0</Left>
             <Right>100</Right>
           </Range>
@@ -4644,7 +4644,7 @@
         <P3 name="Debounce Time">
           <Default>5</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×10ms">
+          <Range unit="x10ms">
             <Left>0</Left>
             <Right>20</Right>
           </Range>
@@ -4652,10 +4652,10 @@
         <P4 name="Validity Time">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4679,7 +4679,7 @@
         <P7 name="Debounce Time1">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×10ms">
+          <Range unit="x10ms">
             <Left>0</Left>
             <Right>20</Right>
           </Range>
@@ -4687,10 +4687,10 @@
         <P8 name="Validity Time1">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4714,7 +4714,7 @@
         <P11 name="Debounce Time2">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×10ms">
+          <Range unit="x10ms">
             <Left>0</Left>
             <Right>20</Right>
           </Range>
@@ -4722,10 +4722,10 @@
         <P12 name="Validity Time2">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4749,7 +4749,7 @@
         <P15 name="Debounce Time3">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×10ms">
+          <Range unit="x10ms">
             <Left>0</Left>
             <Right>20</Right>
           </Range>
@@ -4757,10 +4757,10 @@
         <P16 name="Validity Time3">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4799,10 +4799,10 @@
         <P21 name="Validity Time (Optional)">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4858,7 +4858,7 @@
         <P5 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -4948,10 +4948,10 @@
         <P4 name="Sample Period">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds">
+          <Range unit="x2s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -4959,7 +4959,7 @@
         <P5 name="Debounce Time">
           <Default>0</Default>
           <Len>1</Len>
-          <Range unit="×1seconds">
+          <Range unit="x1s">
             <Left>0</Left>
             <Right>5</Right>
           </Range>
@@ -4987,7 +4987,7 @@
         <P8 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -5011,7 +5011,7 @@
         <P11 name="Voltage Margin Error">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×10mv">
+          <Range unit="x10mV">
             <Left>0</Left>
             <Right>100</Right>
           </Range>
@@ -5019,7 +5019,7 @@
         <P12 name="Debounce Voltage Threshold">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100mv">
+          <Range unit="x100mV">
             <Left>0</Left>
             <Right>100</Right>
           </Range>
@@ -5027,7 +5027,7 @@
         <P13 name="MPN / MPF Validity Time">
           <Default>0</Default>
           <Len>1</Len>
-          <Range unit="×1seconds">
+          <Range unit="x1s">
             <Left>0</Left>
             <Right>5</Right>
           </Range>
@@ -5102,10 +5102,10 @@
         <P4 name="Input Sample Period">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×2seconds|×4seconds">
+          <Range unit="x2seconds|x4s">
             <Item>0</Item>
           </Range>
-          <Range unit="×2seconds|×4seconds">
+          <Range unit="x2seconds|x4s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -5133,7 +5133,7 @@
         <P7 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -5234,7 +5234,7 @@
         <P3 name="Interval">
           <Default>5</Default>
           <Len>&lt;=2</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>60</Right>
           </Range>
@@ -5251,9 +5251,9 @@
           <Default>2</Default>
           <Len>1</Len>
           <Range unit="">
-            <Item name="160*120">1</Item>
-            <Item name="320*240">2</Item>
-            <Item name="640*480">3</Item>
+            <Item name="160x120">1</Item>
+            <Item name="320x240">2</Item>
+            <Item name="640x480">3</Item>
           </Range>
         </P5>
         <P6 name="Digital Input ID">
@@ -5310,7 +5310,7 @@
         <P12 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -5470,7 +5470,7 @@
         <P8 name="Ex Detection Frequency">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>600</Right>
           </Range>
@@ -5480,15 +5480,15 @@
           <Len>1</Len>
           <Range unit="">
             <Item name="No filter">0</Item>
-            <Item name="12 seconds">1</Item>
-            <Item name="24 seconds">2</Item>
-            <Item name="36 seconds">3</Item>
-            <Item name="60 seconds">4</Item>
-            <Item name="120 seconds">5</Item>
-            <Item name="180 seconds">6</Item>
-            <Item name="240 seconds">7</Item>
-            <Item name="480 seconds">8</Item>
-            <Item name="960 seconds">9</Item>
+            <Item name="12 s">1</Item>
+            <Item name="24 s">2</Item>
+            <Item name="36 s">3</Item>
+            <Item name="60 s">4</Item>
+            <Item name="120 s">5</Item>
+            <Item name="180 s">6</Item>
+            <Item name="240 s">7</Item>
+            <Item name="480 s">8</Item>
+            <Item name="960 s">9</Item>
           </Range>
         </P9>
         <P10 name="Report Sensor Data">
@@ -5502,7 +5502,7 @@
         <P11 name="Ex Detection Frequency IGF">
           <Default>300</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>30</Left>
             <Right>1800</Right>
           </Range>
@@ -5669,16 +5669,16 @@
           </Range>
         </P3>
         <P4 name="ID Number List">
-          <Len>&lt;=8*28</Len>
+          <Len>&lt;=8x28</Len>
           <Range type="AlphaNum6" unit=""> </Range>
         </P4>
         <P5 name="Timeout after Ignition Off">
           <Default>30</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>15</Left>
             <Right>600</Right>
           </Range>
@@ -5694,10 +5694,10 @@
         <P7 name="ID Validity Time">
           <Default>30</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>15</Left>
             <Right>600</Right>
           </Range>
@@ -5730,7 +5730,7 @@
         <P13 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -5813,7 +5813,7 @@
           </Range>
         </P5>
         <P6 name="ID Number List">
-          <Len>&lt;=8*1000</Len>
+          <Len>&lt;=8x1000</Len>
           <Range type="AlphaNum6" unit=""> </Range>
         </P6>
       </IDS>
@@ -6152,7 +6152,7 @@
         </P16>
         <P17 name="Interval7">
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>3600</Right>
           </Range>
@@ -6174,7 +6174,7 @@
         </P19>
         <P20 name="Interval8">
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>3600</Right>
           </Range>
@@ -6277,10 +6277,10 @@
         <P2 name="Sample Interval">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×10s">
+          <Range unit="x10s">
             <Item>0</Item>
           </Range>
-          <Range unit="×10s">
+          <Range unit="x10s">
             <Left>3</Left>
             <Right>255</Right>
           </Range>
@@ -6288,7 +6288,7 @@
         <P3 name="Temperature Threshold">
           <Default>2</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×1°C">
+          <Range unit="℃">
             <Left>2</Left>
             <Right>30</Right>
           </Range>
@@ -6296,7 +6296,7 @@
         <P4 name="Humidity Threshold">
           <Default>1</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×1%">
+          <Range unit="x1%">
             <Left>1</Left>
             <Right>100</Right>
           </Range>
@@ -6334,10 +6334,10 @@
         <P1 name="ID Read Timer">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>1</Left>
             <Right>10</Right>
           </Range>
@@ -6361,7 +6361,7 @@
         <P4 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -6377,10 +6377,10 @@
         <P6 name="Data Read Timer">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>10</Left>
             <Right>255</Right>
           </Range>
@@ -6452,10 +6452,10 @@
         <P5 name="Sample Period">
           <Default>0</Default>
           <Len>&lt;=2</Len>
-          <Range unit="×4seconds">
+          <Range unit="x4s">
             <Item>0</Item>
           </Range>
-          <Range unit="×4seconds">
+          <Range unit="x4s">
             <Left>1</Left>
             <Right>12</Right>
           </Range>
@@ -6531,7 +6531,7 @@
         <P6 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -6663,7 +6663,7 @@
         <P16 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -6703,10 +6703,10 @@
         <P2 name="CAN Report Interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -6714,10 +6714,10 @@
         <P3 name="CAN Report Interval IGF">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -6776,10 +6776,10 @@
         <P11 name="Tacho Report Interval">
           <Default>0</Default>
           <Len>&lt;=5</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>86400</Right>
           </Range>
@@ -6829,7 +6829,7 @@
         <P3 name="Debounce Time">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -6932,7 +6932,7 @@
         <P16 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -7616,7 +7616,7 @@
         <P14 name="Read Response Time">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>1</Left>
             <Right>600</Right>
           </Range>
@@ -7624,10 +7624,10 @@
         <P15 name="Read Interval">
           <Default>5</Default>
           <Len>&lt;=4</Len>
-          <Range unit="seconds">
+          <Range unit="s">
             <Item>0</Item>
           </Range>
-          <Range unit="seconds">
+          <Range unit="s">
             <Left>5</Left>
             <Right>3600</Right>
           </Range>
@@ -7664,7 +7664,7 @@
         <P20 name="Write Response Time">
           <Default>10</Default>
           <Len>&lt;=3</Len>
-          <Range unit="×100ms">
+          <Range unit="x100ms">
             <Left>1</Left>
             <Right>600</Right>
           </Range>
@@ -7776,7 +7776,7 @@
         <P16 name="Duration">
           <Default>0</Default>
           <Len>&lt;=3</Len>
-          <Range unit="(×100ms)">
+          <Range unit="(x100ms)">
             <Left>0</Left>
             <Right>255</Right>
           </Range>
@@ -7913,7 +7913,7 @@
         <P2 name="Download Timeout">
           <Default>10</Default>
           <Len>&lt;=2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>5</Left>
             <Right>30</Right>
           </Range>
@@ -8004,7 +8004,7 @@
         <P3 name="download timeout">
           <Default>20</Default>
           <Len>2</Len>
-          <Range unit="minutes">
+          <Range unit="min">
             <Left>10</Left>
             <Right>30</Right>
           </Range>
@@ -9414,7 +9414,7 @@
           </P57>
           <P58 name="Accessory Humidity (Optional)">
             <Len>&lt;=4</Len>
-            <Range unit="%(rh)">
+            <Range unit="%rh">
               <Left>0</Left>
               <Right>100</Right>
             </Range>
@@ -9925,10 +9925,10 @@
           </P4>
           <P5 name="Check Interval">
             <Len>&lt;=5</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Item>0</Item>
             </Range>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>5</Left>
               <Right>86400</Right>
             </Range>
@@ -11669,7 +11669,7 @@
         <G9 member="IGN">
           <P1 name="Duration of Ignition Off">
             <Len>&lt;=6</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -11886,7 +11886,7 @@
         <G11 member="IGF">
           <P1 name="Duration of Ignition On">
             <Len>&lt;=6</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -12210,7 +12210,7 @@
           </P1>
           <P2 name="Duration of Idling Status">
             <Len>&lt;=6</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -13881,7 +13881,7 @@
           </P42>
           <P43 name="Analog Input Value">
             <Len>&lt;=5</Len>
-            <Range unit="mv">
+            <Range unit="mV">
               <Left>0</Left>
               <Right>99999</Right>
             </Range>
@@ -15002,7 +15002,7 @@
           </P19>
           <P20 name="Harsh Behavior Duration">
             <Len>&lt;=6</Len>
-            <Range unit="(×10ms)">
+            <Range unit="(x10ms)">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -17178,7 +17178,7 @@
         </G1>
         <G2 member="ACC">
           <P1 name="Data">
-            <Len>12*75</Len>
+            <Len>12x75</Len>
             <Range type="AlphaNum14" unit=""> </Range>
           </P1>
         </G2>
@@ -19563,7 +19563,7 @@
           </P33>
           <P34 name="Fuel Temperature (Optional)">
             <Len>1</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-40</Left>
               <Right>85</Right>
             </Range>
@@ -19592,7 +19592,7 @@
           </P38>
           <P39 name="Temperature">
             <Len>1</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-20</Left>
               <Right>60</Right>
             </Range>
@@ -19695,7 +19695,7 @@
           </P53>
           <P54 name="Accessory Humidity(Optional)">
             <Len>1</Len>
-            <Range unit="%(rh)">
+            <Range unit="%rh">
               <Left>0</Left>
               <Right>100</Right>
             </Range>
@@ -19748,7 +19748,7 @@
           </P61>
           <P62 name="Enhanced Temperature(Optional)">
             <Len>2</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-40.00</Left>
               <Right>80.00</Right>
             </Range>
@@ -19841,7 +19841,7 @@
           </P84>
           <P85 name="Temperature Value">
             <Len>2</Len>
-            <Range unit="0.1°C">
+            <Range unit="x0.1℃">
               <Left>-999</Left>
               <Right>999</Right>
             </Range>
@@ -21710,7 +21710,7 @@
           </P17>
           <P18 name="Duration of Ignition On or Ignition Off">
             <Len>4</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -23455,10 +23455,10 @@
           </P21>
           <P22 name="Check Interval">
             <Len>4</Len>
-            <Range unit="sec">
+            <Range unit="s">
               <Item>0</Item>
             </Range>
-            <Range unit="sec">
+            <Range unit="s">
               <Left>5</Left>
               <Right>86400</Right>
             </Range>
@@ -26568,7 +26568,7 @@
           </P22>
           <P23 name="Harsh Behavior Duration">
             <Len>3</Len>
-            <Range unit="×10ms">
+            <Range unit="x10ms">
               <Left>0</Left>
               <Right>999999</Right>
             </Range>
@@ -27588,7 +27588,7 @@
           </P27>
           <P28 name="Accessory Humidity(Optional)">
             <Len>1</Len>
-            <Range unit="%(rh)">
+            <Range unit="%rh">
               <Left>0</Left>
               <Right>100</Right>
             </Range>
@@ -30134,7 +30134,7 @@
           </P23>
           <P24 name="Tire Temperature">
             <Len>2</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-50</Left>
               <Right>205</Right>
             </Range>
@@ -30586,7 +30586,7 @@
             <Range type="UID" unit=""> </Range>
           </P3>
           <P4 name="Data">
-            <Len>6*75</Len>
+            <Len>6x75</Len>
           </P4>
         </G2>
       </CDATA>
@@ -30696,7 +30696,7 @@
           </P14>
           <P15 name="Engine Coolant Temperature">
             <Len>2</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-40</Left>
               <Right>+215</Right>
             </Range>
@@ -31028,7 +31028,7 @@
           </P63>
           <P64 name="Ambient Temperature">
             <Len>2</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-40</Left>
               <Right>+215</Right>
             </Range>
@@ -31136,7 +31136,7 @@
           </P80>
           <P81 name="Battery Temperature">
             <Len>2</Len>
-            <Range unit="°C">
+            <Range unit="℃">
               <Left>-40</Left>
               <Right>+215</Right>
             </Range>
@@ -31232,161 +31232,161 @@
           </P94>
           <P95 name="Drv1 Remaining Current Drive Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P95>
           <P96 name="Drv1 Remaining Time Until Next Break Or Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P96>
           <P97 name="Drv1 Duration Of Next Break Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P97>
           <P98 name="Drv1 Remaining Time Of Current Break Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P98>
           <P99 name="Drv1 Time Left Until Next Driving Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P99>
           <P100 name="Drv1 Duration Of Next Driving Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P100>
           <P101 name="Drv1 Remaining Driving Time On Current Shift">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P101>
           <P102 name="Drv1 Time Left Until New Daily Rest Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P102>
           <P103 name="Drv1 Minimum Daily Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P103>
           <P104 name="Drv1 Remaining Driving Time Of Current Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P104>
           <P105 name="Drv1 Time Left Until New Weekly Rest Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P105>
           <P106 name="Drv1 Minimum Weekly Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P106>
           <P107 name="Drv1 Open Compensation In The Last Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P107>
           <P108 name="Drv1 Open Compensation In Week Before Last">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P108>
           <P109 name="Drv1 Open Compensation In 2nd Week Before Last">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P109>
           <P110 name="Drv1 Continuous Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P110>
           <P111 name="Drv1 Cumulative Break Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P111>
           <P112 name="Drv1 Current Duration Of Selected Activity">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P112>
           <P113 name="Drv1 Accumulated Driving Time Previous And Current Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P113>
           <P114 name="Drv1 Current Daily Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P114>
           <P115 name="Drv1 Current Weekly Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P115>
           <P116 name="Drv1 Cumulative Uninterrupted Rest Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P116>
           <P117 name="Drv1 Maximum Daily Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
@@ -31433,161 +31433,161 @@
           </P124>
           <P125 name="Drv2 Remaining Current Drive Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P125>
           <P126 name="Drv2 Remaining Time Until Next Break Or Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P126>
           <P127 name="Drv2 Duration Of Next Break Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P127>
           <P128 name="Drv2 Remaining Time Of Current Break Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P128>
           <P129 name="Drv2 Time Left Until Next Driving Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P129>
           <P130 name="Drv2 Duration Of Next Driving Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P130>
           <P131 name="Drv2 Remaining Driving Time On Current Shift">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P131>
           <P132 name="Drv2 Time Left Until New Daily Rest Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P132>
           <P133 name="Drv2 Minimum Daily Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P133>
           <P134 name="Drv2 Remaining Driving Time Of Current Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P134>
           <P135 name="Drv2 Time Left Until New Weekly Rest Period">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P135>
           <P136 name="Drv2 Minimum Weekly Rest">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P136>
           <P137 name="Drv2 Open Compensation In The Last Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P137>
           <P138 name="Drv2 Open Compensation In Week Before Last">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P138>
           <P139 name="Drv2 Open Compensation In 2nd Week Before Last">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P139>
           <P140 name="Drv2 Continuous Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P140>
           <P141 name="Drv2 Cumulative Break Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P141>
           <P142 name="Drv2 Current Duration Of Selected Activity">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P142>
           <P143 name="Drv2 Accumulated Driving Time Previous And Current Week">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P143>
           <P144 name="Drv2 Current Daily Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P144>
           <P145 name="Drv2 Current Weekly Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P145>
           <P146 name="Drv2 Cumulative Uninterrupted Rest Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
           </P146>
           <P147 name="Drv2 Maximum Daily Driving Time">
             <Len>2</Len>
-            <Range unit="minute">
+            <Range unit="min">
               <Left>0</Left>
               <Right>65535</Right>
             </Range>
