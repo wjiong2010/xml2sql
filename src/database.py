@@ -104,11 +104,26 @@ class ProjectTable(Tables):
              'phone_call', 'sms', 'waterproof', 'version', 'message_format', 'inner_battery']
 
 
+def is_ascii(c):
+    if 0 <= ord(c) <= 127:
+        return True
+    else:
+        return False
+
+
+def is_ascii_str(in_str):
+    for c in in_str:
+        if not is_ascii(c):
+            return False
+    return True
+
+
 class DataBase:
     def __init__(self):
         self.COL_A_WIDTH = 20
         self.COL_B_WIDTH = 120
         self.DATABASE = "protocol_database"
+        self.unit_list = []
         self.db_config = {
             "host": 'localhost',
             "user": 'root',
@@ -177,6 +192,57 @@ class DataBase:
         :return: 1 success, 0 fail
         """
 
+    def get_unit_table_id(self, in_str):
+        print(in_str)
+        lower_unit_list = []
+        for u in self.unit_list:
+            if is_ascii_str(u):
+                lower_unit_list.append(u.lower())
+            else:
+                lower_unit_list.append(u)
+
+        in_str = in_str.lower()
+        print("in_str: " + in_str)
+
+        if not is_ascii_str(in_str):
+            return self.unit_list.index(in_str) + 1
+        elif in_str in lower_unit_list:
+            return lower_unit_list.index(in_str.lower()) + 1
+        else:
+            print("Not found")
+            return 0
+
+    def mysql_select(self, cursor, table, columns=None, where=None):
+
+        if columns is None:
+            return
+
+        query = "SELECT "
+        col = ""
+        if len(columns) == 1:
+            col += columns[0]
+        else:
+            for c in columns:
+                col += "{}, ".format(c)
+            col = col.strip()
+            if col.endswith(',') != -1:
+                col = col[:-1]
+        query += col + " "
+
+        query += "FROM {}".format(table)
+
+        if where is not None:
+            print("where")
+
+        print("query: " + query)
+        cursor.execute(query, [])
+        result = cursor.fetchall()
+        t = ()
+        for r in result:
+            t += r
+        self.unit_list = list(t)
+        print("unit_list: " + str(self.unit_list))
+
     def mysql_insert(self, cursor, table):
         columns = self.get_table_value(table, True)
         values = self.get_table_value(table, False)
@@ -211,6 +277,16 @@ class DataBase:
                 cursor.execute(add_columns, l)
                 l.clear()
                 c += 1
+
+    def init_prot_info(self):
+        conn = self.mysql_connect()
+        if conn and conn.is_connected():
+            print("Connected to MySQL")
+            with conn.cursor() as cursor:
+                self.mysql_select(cursor, "parameter_unit_table", ["unit"])
+            conn.close()
+        else:
+            print("Failed to connect to MySQL")
 
     def mysql_proc(self, table_name):
         print(f"table: {table_name}")

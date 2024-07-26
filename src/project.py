@@ -360,6 +360,7 @@ class _Param:
             self.rng_type = ''
             self.filter_mask = _Mask()
             self.description = ''
+            self.unit = ''
 
     def get_random_value(self, hex_format, fix_len=0, float_number=False):
         if not self.valid:

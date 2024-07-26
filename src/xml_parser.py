@@ -12,6 +12,7 @@ from regex import RegularExpression
 from project import Project
 import time
 from sql import sql_statement as sql_stt
+from database import data_base as dbs
 
 ELEMENT_NODE = 1  # 1 is Element
 
@@ -160,6 +161,7 @@ def __parse_air_protocol_param(node, Px):
         print("----------{0}---------\r\n".format(Px.name))
     if Px.name.upper() != "RESERVED":
         desc = ''
+        unit_id = 0
         value_format = 0
         for sub in node.childNodes:
             # print(sub.nodeName + '\n')
@@ -179,6 +181,11 @@ def __parse_air_protocol_param(node, Px):
                     filter_mask = sub.getAttribute('filter')
                     # print(f"filter_mask: {filter_mask}")
                     Px.Range.filter_mask.parse(filter_mask)
+
+                if sub.hasAttribute('unit'):
+                    # print(f"filter_mask: {filter_mask}")
+                    Px.Range.unit = sub.getAttribute('unit')
+                    unit_id = dbs.get_unit_table_id(Px.Range.unit)
 
                 Px.Range.Items = ''
                 Px.Range.ItemCnt = 0
@@ -241,9 +248,9 @@ def __parse_air_protocol_param(node, Px):
 
         lr_str = Px.Range.get_leftright()
         items_str = Px.Range.get_items_str()
-        print("para_name:<{}> L:{} D:{} F:{}, lr:{}, items:{}, desc:{}".format(Px.name, Px.Len, Px.Default, Px.Range.filter_mask.value, lr_str, items_str, desc))
+        print("para_name:<{}> L:{} D:{} F:{}, lr:{}, items:{}, U:{}, desc:{}".format(Px.name, Px.Len, Px.Default, Px.Range.filter_mask.value, lr_str, items_str, unit_id, desc))
 
-        p_list = [Px.name, Px.Len, items_str.strip(), lr_str, Px.Default, value_format, Px.Range.filter_mask.value, 0, 0, 1]
+        p_list = [Px.name, Px.Len, items_str.strip(), lr_str, Px.Default, value_format, Px.Range.filter_mask.value, 0, unit_id, 1]
         sql_stt.parameter_list.append(p_list)
 
         Px.valid = True

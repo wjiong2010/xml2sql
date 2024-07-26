@@ -49,7 +49,7 @@ TestProjects = [{'proj_name': 'gb100cg', 'proj_ver': '0201'},
                 {'proj_name': 'gv50cg', 'proj_ver': '0301'},
                 {'proj_name': 'gv57ceu', 'proj_ver': '0502'},
                 {'proj_name': 'gv57cg', 'proj_ver': '0402'},
-                {'proj_name': 'gv58ceu', 'proj_ver': '0502'},
+                # {'proj_name': 'gv58ceu', 'proj_ver': '0502'},
                 {'proj_name': 'gv58cg', 'proj_ver': '0801'},
                 {'proj_name': 'gv58lau', 'proj_ver': '0600'},
                 {'proj_name': 'gv75lau', 'proj_ver': '0201'}]
@@ -275,6 +275,7 @@ def main(dbuilder=DocBuilder):
         if sys.argv[1] == "-unit":
             db.mysql_proc("parameter_unit_table")
     else:
+        db.init_prot_info()
         test_prj_list = []
         for p in TestProjects:
             test_prj_list.append('.\\xml2sql.py')
@@ -293,8 +294,7 @@ def main(dbuilder=DocBuilder):
             else:
                 raise Exception("check args failed!")
             test_prj_list.clear()
-
-        sql_stt.unique_statement()
+        sql_stt.prepare_sql_statement()
         db.mysql_proc("parameter_table")
 
 
